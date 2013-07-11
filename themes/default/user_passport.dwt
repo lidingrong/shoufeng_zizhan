@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/user.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-min.js"></script>
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,transport.js,flows.js'}
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="main wrap">
+    <div class="corners_top"></div><!--.corners_top-->
+    <div class="corners_center">
+        
+        <!--当前位置 start-->
+        <div class="block box">
+         <div id="ur_here">
+          <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+          </div>
+        </div>
+        <!--当前位置 end-->
+        <div class="blank"></div>
+        <!--#登录界面 start-->
+        <!-- {if $action eq 'login'} -->
+        
+        <div class="products-box">
+				<h1 class="pro-title">ログインとアカウント作成</h1>
+                <div class="divlog-box">
+				<p class="log-text">登録しておけば、オンライショップでのお買い物などの際に入力の手間が省けて便利です。しかもごアカウントで複数の届け先を保存することとご注文を追跡することも可能です。</p>
+				<div class="log-box">
+					<div class="log-left">
+						<div class="log-title">アカウントを持っていない方</div>
+						<div class="f_card">
+							<div class="blank6"></div>
+							<div class="info">登録しておけば、オンライショップでのお買い物などの際に入力の手間が省けて便利です。しかもごアカウントで複数の届け先を保存することとご注文を追跡することも可能です...</div>
+						</div>
+						<div class="btn"><a href="user.php?act=register"><input type="button" name="create_new_account" value="新規アカウント作成" class="log-button"></a></div>
+					</div>
+					<div class="log-right">
+						<form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+							<div class="log-title">アカウントをログインする</div>
+							<div class="f_card">
+								<div class="log-infor">アカウントを持っている方は下記でログインしてください。</div>
+								<div class="rows">
+									<label>Ｅメール:</label>
+									<span><input name="username" value="" type="text" class="form_input" size="41" maxlength="100" check="メールアドレスをご入力ください。~email|ご入力したメールアドレスが無効です。*"></span>
+								</div>
+								<div class="rows">
+									<label>パスワード:</label>
+									<span><input name="password" value="" type="password" class="form_input" size="41" maxlength="20" check="パスワードをご入力ください。~*"></span>
+								</div>
+                                <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                                <div class="rows">
+									<label>{$lang.comment_captcha}:</label>
+									<span><input type="text" size="8" name="captcha" class="inputBg" />
+                    <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /></span>
+								</div>
+                                <!--{/if}-->
+								<div class="forgot"><a href="user.php?act=get_password" class="f3">パスワードを忘れた?</a></div>
+							</div>
+							<div class="dline"> 
+                                 <input type="hidden" name="act" value="act_login" />
+                                 <input type="hidden" name="back_act" value="{$back_act}" />
+                            </div>
+							<div class="btn"><input type="submit" name="Submit" value="ログイン" class="log-button"></div>
+							
+						</form>
+					</div>
+					<div class="clear"></div>
+				</div>
+                </div>
+			</div>
+        <!--{/if}-->
+        <!--#登录界面 end-->
+        
+        <!--*会员注册界面 start-->
+            <!--{if $action eq 'register'}-->
+            <!-- {if $shop_reg_closed eq 1} -->
+            <div class="usBox">
+              <div class="usBox_2 clearfix">
+                <div class="f1 f5" align="center">{$lang.shop_register_closed}</div>
+              </div>
+            </div>
+            <!-- {else} -->
+            {insert_scripts files='utils.js'}
+        <div class="usBox">
+          <div class=" clearfix">
+           <div class="regtitle"></div>
+              <div class="products-box">
+				<h1 class="pro-title">新規アカウント作成</h1>
+                 <div class="divlog-box">
+				<div class="reg-box">
+					 <form action="user.php" method="post" name="formUser" onsubmit="return register(this)">
+						<div class="lib_member_title">新規アカウント作成</div>
+						<div class="required_info">(<font class="fc_red">*</font>) 記号は必要内容です。</div>
+						<div class="f_item">ログイン情報</div>
+						<div class="rows">
+							<label>メールアドレス: <font class="fc_red">*</font></label>
+							<span>
+							<input name="email" value="" type="text" onblur="return checkmail()" id="mem_Email" class="form_input" check="メールアドレスをご入力ください。~email|ご入力したメールアドレスが無効です。*" size="50" maxlength="100">
+                            <input id="mail_hid" name="mail_hid" type="hidden" />
+                            <div id="email_notice" style="display:none"></div>
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label>アドレス確認: <font class="fc_red">*</font></label>
+							<span>
+							<input name="ConfirmEmail" value="" type="text" class="form_input" check="ご確認したメールアドレスはご入力したのと一致していません。~=Email|確認用アドレスとメールアドレスが一致しません。*" size="50" maxlength="100">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label>パスワード: <font class="fc_red">*</font></label>
+							<span>
+							<input name="password" value="" type="password" class="form_input" check="パスワードをご入力ください。~*"  onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)"  size="50" maxlength="20">	<span style="color:#393" id="password_notice2"></span><span style="color:#FF0000" id="password_notice"></span>
+                            <div style="padding-top:6px;">6文字以上の半角数字、記号は可能です。英字の大文字と小文字は区別されます。</div>
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label>パスワード確認: <font class="fc_red">*</font></label>
+							<span>
+							<input name="ConfirmPassword" value="" type="password" class="form_input" check="パスワードをご確認ください。~=Password|確認用パスワードとパスワードが一致しません。*" size="50" maxlength="20">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="f_item">個人情報</div>
+						<div class="c_rows">
+							<div class="c_left"><font class="fc_red">*</font> 姓（氏名）: </div>
+							<div class="c_right">
+								<input name="FirstName" value="" type="text" class="form_input" check="姓（氏名）をご入力ください。~*" size="25" maxlength="20">
+							</div>
+						</div>
+						<div class="c_rows">
+							<div class="c_left"><font class="fc_red">*</font> 名（氏名）: </div>
+							<div class="c_right">
+								<input name="LastName" value="" type="text" class="form_input" check="名（氏名）をご入力ください。~*" size="25" maxlength="20">
+							</div>
+						</div>
+						<div class="c_rows">
+							<div class="c_left"><font class="fc_red">*</font> 姓（フリガナ）: </div>
+							<div class="c_right">
+								<input name="FirstName_2" value="" type="text" class="form_input" check="姓（フリガナ）をご入力ください。~*" size="25" maxlength="20">
+							</div>
+						</div>
+						<div class="c_rows">
+							<div class="c_left"><font class="fc_red">*</font> 名（フリガナ）: </div>
+							<div class="c_right">
+								<input name="LastName_2" value="" type="text" class="form_input" check="名（フリガナ）をご入力ください。~*" size="25" maxlength="20">
+							</div>
+						</div>
+						<div class="blank3"></div>
+						<div class="rows">
+							<label><font class="fc_red">*</font> 郵便番号 :</label>
+							<span>
+							<input name="PostalCode" id="PostalCode" value="" type="text" class="form_input" check="郵便番号をご入力ください。~*" size="10">
+							<input type="button" name="zipcode_area" value="住所を検索" class="form_button" onclick="zipcode('PostalCode', 'State', 'City', 'AddressLine');">
+							半角数字、7文字　例：1066182</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label><font class="fc_red">*</font> 都道府県 :</label>
+							<span>
+							<input name="State" id="State" value="" type="text" class="form_input" check="都道府県をご入力ください。~*" size="25" maxlength="20">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label><font class="fc_red">*</font> 市区町村 :</label>
+							<span>
+							<input name="City" id="City" value="" type="text" class="form_input" check="市区町村をご入力ください。~*" size="25" maxlength="20">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label><font class="fc_red">*</font> 町名・番地 :</label>
+
+							<span>
+							<input name="AddressLine" id="AddressLine" value="" type="text" class="form_input" check="町名・番地をご入力ください。~*" size="25" maxlength="200">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label> ビル・マンション名 :</label>
+							<span>
+							<input name="Room" value="" type="text" class="form_input" check="ビル・マンション名をご入力ください。~*" size="25" maxlength="50">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="rows">
+							<label><font class="fc_red">*</font> 電話番号:</label>
+							<span>
+							<input name="mobile_phone" value="" type="text" class="form_input" check="電話番号をご入力ください。~*" size="15" maxlength="20">
+							</span>
+							<div class="clear"></div>
+						</div>
+                        <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                        <div class="rows">
+							<label><font class="fc_red">*</font> {$lang.comment_captcha}:</label>
+							<span>
+                                <input type="text" size="8" name="captcha" class="inputBg" />
+                                <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" />
+							</span>
+							<div class="clear"></div>
+						</div>
+                         <!--{/if}-->
+						<div class="dline">
+                        	 <input name="act" type="hidden" value="act_register" >
+                  			<input type="hidden" name="back_act" value="{$back_act}" />
+                        </div>
+						<div class="rows rows2">
+							<label></label>
+							<span>
+							<input name="Submit" type="submit" class="form_button form_button_130" value="新規アカウント作成">
+							</span>
+							<div class="clear"></div>
+						</div>
+						<input type="hidden" name="data" value="member_create">
+					</form>
+				</div>
+                </div>
+			</div>
+           
+          </div>
+        </div>
+        <!--{/if}-->
+        <!--{/if}-->
+        <!--#会员注册界面 end-->
+        
+        <!--*找回密码界面 -->
+            <!--{if $action eq 'get_password'} -->
+            {insert_scripts files='utils.js'}
+            <script type="text/javascript">
+            {foreach from=$lang.password_js item=item key=key}
+              var {$key} = "{$item}";
+            {/foreach}
+            </script>
+        <div class="usBox">
+          <div class="usBox_2 clearfix">
+            <form action="user.php" method="post" name="getPassword" onsubmit="return submitPwdInfo();">
+                <br />
+                <table width="70%" border="0" align="center">
+                  <tr>
+                    <td colspan="2" align="center"><strong>{$lang.username_and_email}</strong></td>
+                  </tr>
+                  
+                  <tr>
+                    <td align="right">{$lang.email}</td>
+                    <td><input name="email" type="text" size="30" class="inputBg" /></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="hidden" name="act" value="send_pwd_email" />
+                      <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue_1" style="border:none;" />
+                      
+                      <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+                </td>
+                  </tr>
+                </table>
+                <br />
+              </form>
+          </div>
+        </div>
+        <!--{/if}-->
+        
+        <!--*通过问题找回密码的确认找回账号界面 -->
+            <!--{if $action eq 'qpassword_name'} -->
+        <div class="usBox">
+          <div class="usBox_2 clearfix">
+            <form action="user.php" method="post">
+                <br />
+                <table width="70%" border="0" align="center">
+                  <tr>
+                    <td colspan="2" align="center"><strong>{$lang.get_question_username}</strong></td>
+                  </tr>
+                  <tr>
+                    <td width="29%" align="right">{$lang.username}</td>
+                    <td width="61%"><input name="user_name" type="text" size="30" class="inputBg" /></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="hidden" name="act" value="get_passwd_question" />
+                      <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue" style="border:none;" />
+                      <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+                </td>
+                  </tr>
+                </table>
+                <br />
+              </form>
+          </div>
+        </div>
+        <!--{/if}-->
+        
+        <!--*根据输入账号显示密码问题界面 -->
+            <!--{if $action eq 'get_passwd_question'} -->
+        <div class="usBox">
+          <div class="usBox_2 clearfix">
+            <form action="user.php" method="post">
+                <br />
+                <table width="70%" border="0" align="center">
+                  <tr>
+                    <td colspan="2" align="center"><strong>{$lang.input_answer}</strong></td>
+                  </tr>
+                  <tr>
+                    <td width="29%" align="right">{$lang.passwd_question}：</td>
+                    <td width="61%">{$passwd_question}</td>
+                  </tr>
+                  <tr>
+                    <td align="right">{$lang.passwd_answer}：</td>
+                    <td><input name="passwd_answer" type="text" size="20" class="inputBg" /></td>
+                  </tr>
+                  <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                  <tr>
+                    <td align="right">{$lang.comment_captcha}</td>
+                    <td><input type="text" size="8" name="captcha" class="inputBg" />
+                    <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+                  </tr>
+                  <!--{/if}-->
+                  <tr>
+                    <td></td>
+                    <td><input type="hidden" name="act" value="check_answer" />
+                      <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue" style="border:none;" />
+                      <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+                </td>
+                  </tr>
+                </table>
+                <br />
+              </form>
+          </div>
+        </div>
+        <!--{/if}-->
+        
+        <!-- {if $action eq 'reset_password'} -->
+            <script type="text/javascript">
+            {foreach from=$lang.password_js item=item key=key}
+              var {$key} = "{$item}";
+            {/foreach}
+            </script>
+        <div class="usBox">
+          <div class="usBox_2 clearfix">
+            <form action="user.php" method="post" name="getPassword2" onSubmit="return submitPwd()">
+              <br />
+              <table width="80%" border="0" align="center">
+                <tr>
+                  <td>{$lang.new_password}</td>
+                  <td><input name="new_password" type="password" size="25" class="inputBg" /></td>
+                </tr>
+                <tr>
+                  <td>{$lang.confirm_password}:</td>
+                  <td><input name="confirm_password" type="password" size="25"  class="inputBg"/></td>
+                </tr>
+                <tr>
+                  <td colspan="2" align="center">
+                    <input type="hidden" name="act" value="act_edit_password" />
+                    <input type="hidden" name="uid" value="{$uid}" />
+                    <input type="hidden" name="code" value="{$code}" />
+                    <input type="submit" name="submit" value="{$lang.confirm_submit}" />
+                  </td>
+                </tr>
+              </table>
+              <br />
+            </form>
+          </div>
+        </div>
+        <!--{/if}-->
+        <!--#找回密码界面 end-->
+        <div class="blank"></div>
+        
+        <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    </div><!--.corners_center end-->
+    <div class="corners_bot"></div><!--.corners_bot-->
+</div><!--.main end-->        
+        
+</body>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+</html>

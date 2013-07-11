@@ -1,0 +1,1206 @@
+if (!-e $request_filename)
+{
+rewrite ^/index\.html /index.php last;
+rewrite ^/category$  /index.php last; 
+
+
+rewrite ^/Vuitton-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=21&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=21&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=21&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton-([0-9]+)/$                                                         /category.php?id=21&page=$1 last;
+rewrite ^/Vuitton/$                                                                  /category.php?id=21 last;
+rewrite ^/Vuitton$                                                                   /category.php?id=21 last;
+
+rewrite ^/Chanelsale-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=9&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=9&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=9&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale-([0-9]+)/$                                                         /category.php?id=9&page=$1 last;
+rewrite ^/Chanelsale/$                                                                  /category.php?id=9 last;
+rewrite ^/Chanelsale$                                                                   /category.php?id=9 last;
+
+rewrite ^/Guccibags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=16&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=16&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=16&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags-([0-9]+)/$                                                         /category.php?id=16&page=$1 last;
+rewrite ^/Guccibags/$                                                                  /category.php?id=16 last;
+rewrite ^/Guccibags$                                                                   /category.php?id=16 last;
+
+rewrite ^/Hermessite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=17&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=17&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=17&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite-([0-9]+)/$                                                         /category.php?id=17&page=$1 last;
+rewrite ^/Hermessite/$                                                                  /category.php?id=17 last;
+rewrite ^/Hermessite$                                                                   /category.php?id=17 last;
+
+rewrite ^/Celinepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=8&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=8&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=8&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse-([0-9]+)/$                                                         /category.php?id=8&page=$1 last;
+rewrite ^/Celinepurse/$                                                                  /category.php?id=8 last;
+rewrite ^/Celinepurse$                                                                   /category.php?id=8 last;
+
+rewrite ^/Balenciagapurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=3&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Balenciagapurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=3&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Balenciagapurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=3&page=$1&sort=$2&order=$3 last;
+rewrite ^/Balenciagapurse-([0-9]+)/$                                                         /category.php?id=3&page=$1 last;
+rewrite ^/Balenciagapurse/$                                                                  /category.php?id=3 last;
+rewrite ^/Balenciagapurse$                                                                   /category.php?id=3 last;
+
+rewrite ^/Pradabags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=25&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Pradabags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=25&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Pradabags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=25&page=$1&sort=$2&order=$3 last;
+rewrite ^/Pradabags-([0-9]+)/$                                                         /category.php?id=25&page=$1 last;
+rewrite ^/Pradabags/$                                                                  /category.php?id=25 last;
+rewrite ^/Pradabags$                                                                   /category.php?id=25 last;
+
+rewrite ^/Burberryhandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=5&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Burberryhandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=5&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Burberryhandbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=5&page=$1&sort=$2&order=$3 last;
+rewrite ^/Burberryhandbag-([0-9]+)/$                                                         /category.php?id=5&page=$1 last;
+rewrite ^/Burberryhandbag/$                                                                  /category.php?id=5 last;
+rewrite ^/Burberryhandbag$                                                                   /category.php?id=5 last;
+
+rewrite ^/BottegaVenetabag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=4&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/BottegaVenetabag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=4&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/BottegaVenetabag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=4&page=$1&sort=$2&order=$3 last;
+rewrite ^/BottegaVenetabag-([0-9]+)/$                                                         /category.php?id=4&page=$1 last;
+rewrite ^/BottegaVenetabag/$                                                                  /category.php?id=4 last;
+rewrite ^/BottegaVenetabag$                                                                   /category.php?id=4 last;
+
+rewrite ^/Fendipurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=14&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Fendipurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=14&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Fendipurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=14&page=$1&sort=$2&order=$3 last;
+rewrite ^/Fendipurse-([0-9]+)/$                                                         /category.php?id=14&page=$1 last;
+rewrite ^/Fendipurse/$                                                                  /category.php?id=14 last;
+rewrite ^/Fendipurse$                                                                   /category.php?id=14 last;
+
+rewrite ^/Diorsite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=12&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Diorsite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=12&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Diorsite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=12&page=$1&sort=$2&order=$3 last;
+rewrite ^/Diorsite-([0-9]+)/$                                                         /category.php?id=12&page=$1 last;
+rewrite ^/Diorsite/$                                                                  /category.php?id=12 last;
+rewrite ^/Diorsite$                                                                   /category.php?id=12 last;
+
+rewrite ^/MiuMiubags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=23&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/MiuMiubags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=23&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/MiuMiubags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=23&page=$1&sort=$2&order=$3 last;
+rewrite ^/MiuMiubags-([0-9]+)/$                                                         /category.php?id=23&page=$1 last;
+rewrite ^/MiuMiubags/$                                                                  /category.php?id=23 last;
+rewrite ^/MiuMiubags$                                                                   /category.php?id=23 last;
+
+rewrite ^/Mulberrytote-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=24&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Mulberrytote-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=24&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Mulberrytote-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=24&page=$1&sort=$2&order=$3 last;
+rewrite ^/Mulberrytote-([0-9]+)/$                                                         /category.php?id=24&page=$1 last;
+rewrite ^/Mulberrytote/$                                                                  /category.php?id=24 last;
+rewrite ^/Mulberrytote$                                                                   /category.php?id=24 last;
+
+rewrite ^/YSLbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=33&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/YSLbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=33&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/YSLbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=33&page=$1&sort=$2&order=$3 last;
+rewrite ^/YSLbags-([0-9]+)/$                                                         /category.php?id=33&page=$1 last;
+rewrite ^/YSLbags/$                                                                  /category.php?id=33 last;
+rewrite ^/YSLbags$                                                                   /category.php?id=33 last;
+
+rewrite ^/JimmyChoosite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=18&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/JimmyChoosite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=18&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/JimmyChoosite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=18&page=$1&sort=$2&order=$3 last;
+rewrite ^/JimmyChoosite-([0-9]+)/$                                                         /category.php?id=18&page=$1 last;
+rewrite ^/JimmyChoosite/$                                                                  /category.php?id=18 last;
+rewrite ^/JimmyChoosite$                                                                   /category.php?id=18 last;
+
+rewrite ^/Chloesite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=10&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chloesite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=10&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chloesite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=10&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chloesite-([0-9]+)/$                                                         /category.php?id=10&page=$1 last;
+rewrite ^/Chloesite/$                                                                  /category.php?id=10 last;
+rewrite ^/Chloesite$                                                                   /category.php?id=10 last;
+
+rewrite ^/ThomasWyldebags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=30&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/ThomasWyldebags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=30&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/ThomasWyldebags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=30&page=$1&sort=$2&order=$3 last;
+rewrite ^/ThomasWyldebags-([0-9]+)/$                                                         /category.php?id=30&page=$1 last;
+rewrite ^/ThomasWyldebags/$                                                                  /category.php?id=30 last;
+rewrite ^/ThomasWyldebags$                                                                   /category.php?id=30 last;
+
+rewrite ^/AlexanderWangshop-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=2&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/AlexanderWangshop-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=2&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/AlexanderWangshop-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=2&page=$1&sort=$2&order=$3 last;
+rewrite ^/AlexanderWangshop-([0-9]+)/$                                                         /category.php?id=2&page=$1 last;
+rewrite ^/AlexanderWangshop/$                                                                  /category.php?id=2 last;
+rewrite ^/AlexanderWangshop$                                                                   /category.php?id=2 last;
+
+rewrite ^/3.1PhillipLimsite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=1&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/3.1PhillipLimsite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=1&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/3.1PhillipLimsite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=1&page=$1&sort=$2&order=$3 last;
+rewrite ^/3.1PhillipLimsite-([0-9]+)/$                                                         /category.php?id=1&page=$1 last;
+rewrite ^/3.1PhillipLimsite/$                                                                  /category.php?id=1 last;
+rewrite ^/3.1PhillipLimsite$                                                                   /category.php?id=1 last;
+
+rewrite ^/MarcJacobstote-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=22&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/MarcJacobstote-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=22&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/MarcJacobstote-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=22&page=$1&sort=$2&order=$3 last;
+rewrite ^/MarcJacobstote-([0-9]+)/$                                                         /category.php?id=22&page=$1 last;
+rewrite ^/MarcJacobstote/$                                                                  /category.php?id=22 last;
+rewrite ^/MarcJacobstote$                                                                   /category.php?id=22 last;
+
+rewrite ^/D&Gpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=13&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/D&Gpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=13&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/D&Gpurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=13&page=$1&sort=$2&order=$3 last;
+rewrite ^/D&Gpurse-([0-9]+)/$                                                         /category.php?id=13&page=$1 last;
+rewrite ^/D&Gpurse/$                                                                  /category.php?id=13 last;
+rewrite ^/D&Gpurse$                                                                   /category.php?id=13 last;
+
+rewrite ^/ProenzaSchoulersite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=26&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/ProenzaSchoulersite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=26&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/ProenzaSchoulersite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=26&page=$1&sort=$2&order=$3 last;
+rewrite ^/ProenzaSchoulersite-([0-9]+)/$                                                         /category.php?id=26&page=$1 last;
+rewrite ^/ProenzaSchoulersite/$                                                                  /category.php?id=26 last;
+rewrite ^/ProenzaSchoulersite$                                                                   /category.php?id=26 last;
+
+rewrite ^/Givenchyhandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=15&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Givenchyhandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=15&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Givenchyhandbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=15&page=$1&sort=$2&order=$3 last;
+rewrite ^/Givenchyhandbag-([0-9]+)/$                                                         /category.php?id=15&page=$1 last;
+rewrite ^/Givenchyhandbag/$                                                                  /category.php?id=15 last;
+rewrite ^/Givenchyhandbag$                                                                   /category.php?id=15 last;
+
+rewrite ^/Bvlgaripurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=6&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Bvlgaripurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=6&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Bvlgaripurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=6&page=$1&sort=$2&order=$3 last;
+rewrite ^/Bvlgaripurses-([0-9]+)/$                                                         /category.php?id=6&page=$1 last;
+rewrite ^/Bvlgaripurses/$                                                                  /category.php?id=6 last;
+rewrite ^/Bvlgaripurses$                                                                   /category.php?id=6 last;
+
+rewrite ^/Cartierpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=7&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Cartierpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=7&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Cartierpurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=7&page=$1&sort=$2&order=$3 last;
+rewrite ^/Cartierpurses-([0-9]+)/$                                                         /category.php?id=7&page=$1 last;
+rewrite ^/Cartierpurses/$                                                                  /category.php?id=7 last;
+rewrite ^/Cartierpurses$                                                                   /category.php?id=7 last;
+
+rewrite ^/Lancelpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=19&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Lancelpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=19&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Lancelpurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=19&page=$1&sort=$2&order=$3 last;
+rewrite ^/Lancelpurses-([0-9]+)/$                                                         /category.php?id=19&page=$1 last;
+rewrite ^/Lancelpurses/$                                                                  /category.php?id=19 last;
+rewrite ^/Lancelpurses$                                                                   /category.php?id=19 last;
+
+rewrite ^/Loewebags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=20&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Loewebags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=20&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Loewebags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=20&page=$1&sort=$2&order=$3 last;
+rewrite ^/Loewebags-([0-9]+)/$                                                         /category.php?id=20&page=$1 last;
+rewrite ^/Loewebags/$                                                                  /category.php?id=20 last;
+rewrite ^/Loewebags$                                                                   /category.php?id=20 last;
+
+rewrite ^/Todshandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=31&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Todshandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=31&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Todshandbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=31&page=$1&sort=$2&order=$3 last;
+rewrite ^/Todshandbag-([0-9]+)/$                                                         /category.php?id=31&page=$1 last;
+rewrite ^/Todshandbag/$                                                                  /category.php?id=31 last;
+rewrite ^/Todshandbag$                                                                   /category.php?id=31 last;
+
+rewrite ^/Stellapurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=29&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Stellapurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=29&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Stellapurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=29&page=$1&sort=$2&order=$3 last;
+rewrite ^/Stellapurses-([0-9]+)/$                                                         /category.php?id=29&page=$1 last;
+rewrite ^/Stellapurses/$                                                                  /category.php?id=29 last;
+rewrite ^/Stellapurses$                                                                   /category.php?id=29 last;
+
+rewrite ^/SamanthaThavasasale-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=28&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/SamanthaThavasasale-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=28&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/SamanthaThavasasale-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=28&page=$1&sort=$2&order=$3 last;
+rewrite ^/SamanthaThavasasale-([0-9]+)/$                                                         /category.php?id=28&page=$1 last;
+rewrite ^/SamanthaThavasasale/$                                                                  /category.php?id=28 last;
+rewrite ^/SamanthaThavasasale$                                                                   /category.php?id=28 last;
+
+rewrite ^/Ferragamohandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=27&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Ferragamohandbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=27&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Ferragamohandbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=27&page=$1&sort=$2&order=$3 last;
+rewrite ^/Ferragamohandbag-([0-9]+)/$                                                         /category.php?id=27&page=$1 last;
+rewrite ^/Ferragamohandbag/$                                                                  /category.php?id=27 last;
+rewrite ^/Ferragamohandbag$                                                                   /category.php?id=27 last;
+
+rewrite ^/Coachpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=11&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Coachpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=11&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Coachpurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=11&page=$1&sort=$2&order=$3 last;
+rewrite ^/Coachpurses-([0-9]+)/$                                                         /category.php?id=11&page=$1 last;
+rewrite ^/Coachpurses/$                                                                  /category.php?id=11 last;
+rewrite ^/Coachpurses$                                                                   /category.php?id=11 last;
+
+rewrite ^/Valentinosite-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$    /category.php?id=32&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Valentinosite-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                              /category.php?id=32&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Valentinosite-([0-9]+)-(.+)-([a-zA-Z]+)/$                                        /category.php?id=32&page=$1&sort=$2&order=$3 last;
+rewrite ^/Valentinosite-([0-9]+)/$                                                         /category.php?id=32&page=$1 last;
+rewrite ^/Valentinosite/$                                                                  /category.php?id=32 last;
+rewrite ^/Valentinosite$                                                                   /category.php?id=32 last;
+
+rewrite ^/Vuitton/Kusama-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=134&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Kusama-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=134&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Kusama-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=134&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Kusama-([0-9]+)/$                                                        /category.php?id=134&page=$1 last;
+rewrite ^/Vuitton/Kusama/$                                                                 /category.php?id=134 last;
+rewrite ^/Vuitton/Kusama$                                                                  /category.php?id=134 last;
+
+rewrite ^/Vuitton/MonogramCanvasline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=111&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramCanvasline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=111&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramCanvasline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=111&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramCanvasline-([0-9]+)/$                                                        /category.php?id=111&page=$1 last;
+rewrite ^/Vuitton/MonogramCanvasline/$                                                                 /category.php?id=111 last;
+rewrite ^/Vuitton/MonogramCanvasline$                                                                  /category.php?id=111 last;
+
+rewrite ^/Vuitton/DamierCanvascollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=103&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/DamierCanvascollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=103&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/DamierCanvascollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=103&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/DamierCanvascollection-([0-9]+)/$                                                        /category.php?id=103&page=$1 last;
+rewrite ^/Vuitton/DamierCanvascollection/$                                                                 /category.php?id=103 last;
+rewrite ^/Vuitton/DamierCanvascollection$                                                                  /category.php?id=103 last;
+
+rewrite ^/Vuitton/Vernispurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=126&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Vernispurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=126&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Vernispurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=126&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Vernispurse-([0-9]+)/$                                                        /category.php?id=126&page=$1 last;
+rewrite ^/Vuitton/Vernispurse/$                                                                 /category.php?id=126 last;
+rewrite ^/Vuitton/Vernispurse$                                                                  /category.php?id=126 last;
+
+rewrite ^/Vuitton/MonogramMulticolorebags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=122&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramMulticolorebags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=122&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramMulticolorebags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=122&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramMulticolorebags-([0-9]+)/$                                                        /category.php?id=122&page=$1 last;
+rewrite ^/Vuitton/MonogramMulticolorebags/$                                                                 /category.php?id=122 last;
+rewrite ^/Vuitton/MonogramMulticolorebags$                                                                  /category.php?id=122 last;
+
+rewrite ^/Vuitton/EPILeatherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=105&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/EPILeatherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=105&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/EPILeatherseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=105&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/EPILeatherseries-([0-9]+)/$                                                        /category.php?id=105&page=$1 last;
+rewrite ^/Vuitton/EPILeatherseries/$                                                                 /category.php?id=105 last;
+rewrite ^/Vuitton/EPILeatherseries$                                                                  /category.php?id=105 last;
+
+rewrite ^/Vuitton/TaigaLeatherbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=132&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/TaigaLeatherbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=132&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/TaigaLeatherbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=132&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/TaigaLeatherbag-([0-9]+)/$                                                        /category.php?id=132&page=$1 last;
+rewrite ^/Vuitton/TaigaLeatherbag/$                                                                 /category.php?id=132 last;
+rewrite ^/Vuitton/TaigaLeatherbag$                                                                  /category.php?id=132 last;
+
+rewrite ^/Vuitton/MahinaLeatherbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=108&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MahinaLeatherbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=108&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MahinaLeatherbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=108&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MahinaLeatherbag-([0-9]+)/$                                                        /category.php?id=108&page=$1 last;
+rewrite ^/Vuitton/MahinaLeatherbag/$                                                                 /category.php?id=108 last;
+rewrite ^/Vuitton/MahinaLeatherbag$                                                                  /category.php?id=108 last;
+
+rewrite ^/Vuitton/DamierGeantcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=104&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/DamierGeantcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=104&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/DamierGeantcollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=104&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/DamierGeantcollection-([0-9]+)/$                                                        /category.php?id=104&page=$1 last;
+rewrite ^/Vuitton/DamierGeantcollection/$                                                                 /category.php?id=104 last;
+rewrite ^/Vuitton/DamierGeantcollection$                                                                  /category.php?id=104 last;
+
+rewrite ^/Vuitton/MonogramSabbiabag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=124&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramSabbiabag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=124&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramSabbiabag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=124&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramSabbiabag-([0-9]+)/$                                                        /category.php?id=124&page=$1 last;
+rewrite ^/Vuitton/MonogramSabbiabag/$                                                                 /category.php?id=124 last;
+rewrite ^/Vuitton/MonogramSabbiabag$                                                                  /category.php?id=124 last;
+
+rewrite ^/Vuitton/MonogramMiniLin-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=119&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramMiniLin-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=119&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramMiniLin-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=119&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramMiniLin-([0-9]+)/$                                                        /category.php?id=119&page=$1 last;
+rewrite ^/Vuitton/MonogramMiniLin/$                                                                 /category.php?id=119 last;
+rewrite ^/Vuitton/MonogramMiniLin$                                                                  /category.php?id=119 last;
+
+rewrite ^/Vuitton/Idyllepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=116&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Idyllepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=116&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Idyllepurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=116&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Idyllepurse-([0-9]+)/$                                                        /category.php?id=116&page=$1 last;
+rewrite ^/Vuitton/Idyllepurse/$                                                                 /category.php?id=116 last;
+rewrite ^/Vuitton/Idyllepurse$                                                                  /category.php?id=116 last;
+
+rewrite ^/Vuitton/Antheiaseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=101&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Antheiaseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=101&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Antheiaseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=101&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Antheiaseries-([0-9]+)/$                                                        /category.php?id=101&page=$1 last;
+rewrite ^/Vuitton/Antheiaseries/$                                                                 /category.php?id=101 last;
+rewrite ^/Vuitton/Antheiaseries$                                                                  /category.php?id=101 last;
+
+rewrite ^/Vuitton/CosmicBlossomcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=102&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/CosmicBlossomcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=102&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/CosmicBlossomcollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=102&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/CosmicBlossomcollection-([0-9]+)/$                                                        /category.php?id=102&page=$1 last;
+rewrite ^/Vuitton/CosmicBlossomcollection/$                                                                 /category.php?id=102 last;
+rewrite ^/Vuitton/CosmicBlossomcollection$                                                                  /category.php?id=102 last;
+
+rewrite ^/Vuitton/StephenSprousecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=130&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/StephenSprousecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=130&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/StephenSprousecollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=130&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/StephenSprousecollection-([0-9]+)/$                                                        /category.php?id=130&page=$1 last;
+rewrite ^/Vuitton/StephenSprousecollection/$                                                                 /category.php?id=130 last;
+rewrite ^/Vuitton/StephenSprousecollection$                                                                  /category.php?id=130 last;
+
+rewrite ^/Vuitton/Macassarpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=118&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Macassarpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=118&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Macassarpurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=118&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Macassarpurse-([0-9]+)/$                                                        /category.php?id=118&page=$1 last;
+rewrite ^/Vuitton/Macassarpurse/$                                                                 /category.php?id=118 last;
+rewrite ^/Vuitton/Macassarpurse$                                                                  /category.php?id=118 last;
+
+rewrite ^/Vuitton/Perforationbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=123&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Perforationbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=123&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Perforationbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=123&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Perforationbag-([0-9]+)/$                                                        /category.php?id=123&page=$1 last;
+rewrite ^/Vuitton/Perforationbag/$                                                                 /category.php?id=123 last;
+rewrite ^/Vuitton/Perforationbag$                                                                  /category.php?id=123 last;
+
+rewrite ^/Vuitton/MonogramEmpreinteline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=115&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramEmpreinteline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=115&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramEmpreinteline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=115&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramEmpreinteline-([0-9]+)/$                                                        /category.php?id=115&page=$1 last;
+rewrite ^/Vuitton/MonogramEmpreinteline/$                                                                 /category.php?id=115 last;
+rewrite ^/Vuitton/MonogramEmpreinteline$                                                                  /category.php?id=115 last;
+
+rewrite ^/Vuitton/MonogramEclipseseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=113&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramEclipseseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=113&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramEclipseseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=113&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramEclipseseries-([0-9]+)/$                                                        /category.php?id=113&page=$1 last;
+rewrite ^/Vuitton/MonogramEclipseseries/$                                                                 /category.php?id=113 last;
+rewrite ^/Vuitton/MonogramEclipseseries$                                                                  /category.php?id=113 last;
+
+rewrite ^/Vuitton/MonogramEden-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=114&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramEden-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=114&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramEden-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=114&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramEden-([0-9]+)/$                                                        /category.php?id=114&page=$1 last;
+rewrite ^/Vuitton/MonogramEden/$                                                                 /category.php?id=114 last;
+rewrite ^/Vuitton/MonogramEden$                                                                  /category.php?id=114 last;
+
+rewrite ^/Vuitton/SuhaliLeatherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=131&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/SuhaliLeatherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=131&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/SuhaliLeatherseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=131&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/SuhaliLeatherseries-([0-9]+)/$                                                        /category.php?id=131&page=$1 last;
+rewrite ^/Vuitton/SuhaliLeatherseries/$                                                                 /category.php?id=131 last;
+rewrite ^/Vuitton/SuhaliLeatherseries$                                                                  /category.php?id=131 last;
+
+rewrite ^/Vuitton/UtahLeatherline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=133&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/UtahLeatherline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=133&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/UtahLeatherline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=133&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/UtahLeatherline-([0-9]+)/$                                                        /category.php?id=133&page=$1 last;
+rewrite ^/Vuitton/UtahLeatherline/$                                                                 /category.php?id=133 last;
+rewrite ^/Vuitton/UtahLeatherline$                                                                  /category.php?id=133 last;
+
+rewrite ^/Vuitton/Miragepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=120&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Miragepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=120&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Miragepurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=120&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Miragepurse-([0-9]+)/$                                                        /category.php?id=120&page=$1 last;
+rewrite ^/Vuitton/Miragepurse/$                                                                 /category.php?id=120 last;
+rewrite ^/Vuitton/Miragepurse$                                                                  /category.php?id=120 last;
+
+rewrite ^/Vuitton/Miroir-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=121&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Miroir-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=121&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Miroir-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=121&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Miroir-([0-9]+)/$                                                        /category.php?id=121&page=$1 last;
+rewrite ^/Vuitton/Miroir/$                                                                 /category.php?id=121 last;
+rewrite ^/Vuitton/Miroir$                                                                  /category.php?id=121 last;
+
+rewrite ^/Vuitton/Suedepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=125&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Suedepurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=125&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Suedepurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=125&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Suedepurse-([0-9]+)/$                                                        /category.php?id=125&page=$1 last;
+rewrite ^/Vuitton/Suedepurse/$                                                                 /category.php?id=125 last;
+rewrite ^/Vuitton/Suedepurse$                                                                  /category.php?id=125 last;
+
+rewrite ^/Vuitton/Watercolorpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=127&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Watercolorpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=127&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Watercolorpurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=127&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Watercolorpurse-([0-9]+)/$                                                        /category.php?id=127&page=$1 last;
+rewrite ^/Vuitton/Watercolorpurse/$                                                                 /category.php?id=127 last;
+rewrite ^/Vuitton/Watercolorpurse$                                                                  /category.php?id=127 last;
+
+rewrite ^/Vuitton/Monogramouflagebags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=128&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Monogramouflagebags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=128&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Monogramouflagebags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=128&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Monogramouflagebags-([0-9]+)/$                                                        /category.php?id=128&page=$1 last;
+rewrite ^/Vuitton/Monogramouflagebags/$                                                                 /category.php?id=128 last;
+rewrite ^/Vuitton/Monogramouflagebags$                                                                  /category.php?id=128 last;
+
+rewrite ^/Vuitton/AilleursCabaswallet-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=100&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/AilleursCabaswallet-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=100&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/AilleursCabaswallet-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=100&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/AilleursCabaswallet-([0-9]+)/$                                                        /category.php?id=100&page=$1 last;
+rewrite ^/Vuitton/AilleursCabaswallet/$                                                                 /category.php?id=100 last;
+rewrite ^/Vuitton/AilleursCabaswallet$                                                                  /category.php?id=100 last;
+
+rewrite ^/Vuitton/Jokescollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=117&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/Jokescollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=117&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/Jokescollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=117&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/Jokescollection-([0-9]+)/$                                                        /category.php?id=117&page=$1 last;
+rewrite ^/Vuitton/Jokescollection/$                                                                 /category.php?id=117 last;
+rewrite ^/Vuitton/Jokescollection$                                                                  /category.php?id=117 last;
+
+rewrite ^/Vuitton/MonogramDenimline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=112&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramDenimline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=112&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramDenimline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=112&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramDenimline-([0-9]+)/$                                                        /category.php?id=112&page=$1 last;
+rewrite ^/Vuitton/MonogramDenimline/$                                                                 /category.php?id=112 last;
+rewrite ^/Vuitton/MonogramDenimline$                                                                  /category.php?id=112 last;
+
+rewrite ^/Vuitton/MonogramBullesbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=110&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramBullesbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=110&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramBullesbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=110&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramBullesbags-([0-9]+)/$                                                        /category.php?id=110&page=$1 last;
+rewrite ^/Vuitton/MonogramBullesbags/$                                                                 /category.php?id=110 last;
+rewrite ^/Vuitton/MonogramBullesbags$                                                                  /category.php?id=110 last;
+
+rewrite ^/Vuitton/NomadeLeatherline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=129&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/NomadeLeatherline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=129&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/NomadeLeatherline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=129&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/NomadeLeatherline-([0-9]+)/$                                                        /category.php?id=129&page=$1 last;
+rewrite ^/Vuitton/NomadeLeatherline/$                                                                 /category.php?id=129 last;
+rewrite ^/Vuitton/NomadeLeatherline$                                                                  /category.php?id=129 last;
+
+rewrite ^/Vuitton/EmbossesAllLeather-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=106&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/EmbossesAllLeather-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=106&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/EmbossesAllLeather-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=106&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/EmbossesAllLeather-([0-9]+)/$                                                        /category.php?id=106&page=$1 last;
+rewrite ^/Vuitton/EmbossesAllLeather/$                                                                 /category.php?id=106 last;
+rewrite ^/Vuitton/EmbossesAllLeather$                                                                  /category.php?id=106 last;
+
+rewrite ^/Vuitton/FashionShowCollectionsbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=107&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/FashionShowCollectionsbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=107&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/FashionShowCollectionsbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=107&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/FashionShowCollectionsbags-([0-9]+)/$                                                        /category.php?id=107&page=$1 last;
+rewrite ^/Vuitton/FashionShowCollectionsbags/$                                                                 /category.php?id=107 last;
+rewrite ^/Vuitton/FashionShowCollectionsbags$                                                                  /category.php?id=107 last;
+
+rewrite ^/Vuitton/MonogramBlocksline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=109&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Vuitton/MonogramBlocksline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=109&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Vuitton/MonogramBlocksline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=109&page=$1&sort=$2&order=$3 last;
+rewrite ^/Vuitton/MonogramBlocksline-([0-9]+)/$                                                        /category.php?id=109&page=$1 last;
+rewrite ^/Vuitton/MonogramBlocksline/$                                                                 /category.php?id=109 last;
+rewrite ^/Vuitton/MonogramBlocksline$                                                                  /category.php?id=109 last;
+
+rewrite ^/Hermessite/Birkinpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=72&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Birkinpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=72&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Birkinpurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=72&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Birkinpurse-([0-9]+)/$                                                        /category.php?id=72&page=$1 last;
+rewrite ^/Hermessite/Birkinpurse/$                                                                 /category.php?id=72 last;
+rewrite ^/Hermessite/Birkinpurse$                                                                  /category.php?id=72 last;
+
+rewrite ^/Hermessite/Kelly-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=84&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Kelly-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=84&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Kelly-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=84&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Kelly-([0-9]+)/$                                                        /category.php?id=84&page=$1 last;
+rewrite ^/Hermessite/Kelly/$                                                                 /category.php?id=84 last;
+rewrite ^/Hermessite/Kelly$                                                                  /category.php?id=84 last;
+
+rewrite ^/Chanelsale/Original-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=54&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Original-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=54&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Original-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=54&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Original-([0-9]+)/$                                                        /category.php?id=54&page=$1 last;
+rewrite ^/Chanelsale/Original/$                                                                 /category.php?id=54 last;
+rewrite ^/Chanelsale/Original$                                                                  /category.php?id=54 last;
+
+rewrite ^/Hermessite/Constancepurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=77&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Constancepurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=77&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Constancepurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=77&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Constancepurses-([0-9]+)/$                                                        /category.php?id=77&page=$1 last;
+rewrite ^/Hermessite/Constancepurses/$                                                                 /category.php?id=77 last;
+rewrite ^/Hermessite/Constancepurses$                                                                  /category.php?id=77 last;
+
+rewrite ^/Hermessite/Evelynebag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=78&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Evelynebag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=78&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Evelynebag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=78&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Evelynebag-([0-9]+)/$                                                        /category.php?id=78&page=$1 last;
+rewrite ^/Hermessite/Evelynebag/$                                                                 /category.php?id=78 last;
+rewrite ^/Hermessite/Evelynebag$                                                                  /category.php?id=78 last;
+
+rewrite ^/Hermessite/Jypsierebag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=83&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Jypsierebag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=83&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Jypsierebag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=83&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Jypsierebag-([0-9]+)/$                                                        /category.php?id=83&page=$1 last;
+rewrite ^/Hermessite/Jypsierebag/$                                                                 /category.php?id=83 last;
+rewrite ^/Hermessite/Jypsierebag$                                                                  /category.php?id=83 last;
+
+rewrite ^/Hermessite/Lindybags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=86&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Lindybags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=86&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Lindybags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=86&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Lindybags-([0-9]+)/$                                                        /category.php?id=86&page=$1 last;
+rewrite ^/Hermessite/Lindybags/$                                                                 /category.php?id=86 last;
+rewrite ^/Hermessite/Lindybags$                                                                  /category.php?id=86 last;
+
+rewrite ^/Hermessite/Bolideline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=73&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Bolideline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=73&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Bolideline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=73&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Bolideline-([0-9]+)/$                                                        /category.php?id=73&page=$1 last;
+rewrite ^/Hermessite/Bolideline/$                                                                 /category.php?id=73 last;
+rewrite ^/Hermessite/Bolideline$                                                                  /category.php?id=73 last;
+
+rewrite ^/Hermessite/GardenPartypurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=80&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/GardenPartypurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=80&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/GardenPartypurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=80&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/GardenPartypurse-([0-9]+)/$                                                        /category.php?id=80&page=$1 last;
+rewrite ^/Hermessite/GardenPartypurse/$                                                                 /category.php?id=80 last;
+rewrite ^/Hermessite/GardenPartypurse$                                                                  /category.php?id=80 last;
+
+rewrite ^/Hermessite/Parisline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=91&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Parisline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=91&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Parisline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=91&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Parisline-([0-9]+)/$                                                        /category.php?id=91&page=$1 last;
+rewrite ^/Hermessite/Parisline/$                                                                 /category.php?id=91 last;
+rewrite ^/Hermessite/Parisline$                                                                  /category.php?id=91 last;
+
+rewrite ^/Hermessite/SoKellybags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=95&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/SoKellybags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=95&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/SoKellybags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=95&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/SoKellybags-([0-9]+)/$                                                        /category.php?id=95&page=$1 last;
+rewrite ^/Hermessite/SoKellybags/$                                                                 /category.php?id=95 last;
+rewrite ^/Hermessite/SoKellybags$                                                                  /category.php?id=95 last;
+
+rewrite ^/Hermessite/Herbagcategory-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=82&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Herbagcategory-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=82&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Herbagcategory-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=82&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Herbagcategory-([0-9]+)/$                                                        /category.php?id=82&page=$1 last;
+rewrite ^/Hermessite/Herbagcategory/$                                                                 /category.php?id=82 last;
+rewrite ^/Hermessite/Herbagcategory$                                                                  /category.php?id=82 last;
+
+rewrite ^/Hermessite/Stirrupseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=97&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Stirrupseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=97&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Stirrupseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=97&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Stirrupseries-([0-9]+)/$                                                        /category.php?id=97&page=$1 last;
+rewrite ^/Hermessite/Stirrupseries/$                                                                 /category.php?id=97 last;
+rewrite ^/Hermessite/Stirrupseries$                                                                  /category.php?id=97 last;
+
+rewrite ^/Hermessite/Picotinbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=92&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Picotinbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=92&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Picotinbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=92&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Picotinbags-([0-9]+)/$                                                        /category.php?id=92&page=$1 last;
+rewrite ^/Hermessite/Picotinbags/$                                                                 /category.php?id=92 last;
+rewrite ^/Hermessite/Picotinbags$                                                                  /category.php?id=92 last;
+
+rewrite ^/Hermessite/Toolboxcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=98&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Toolboxcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=98&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Toolboxcollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=98&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Toolboxcollection-([0-9]+)/$                                                        /category.php?id=98&page=$1 last;
+rewrite ^/Hermessite/Toolboxcollection/$                                                                 /category.php?id=98 last;
+rewrite ^/Hermessite/Toolboxcollection$                                                                  /category.php?id=98 last;
+
+rewrite ^/Hermessite/Stevebags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=96&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Stevebags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=96&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Stevebags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=96&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Stevebags-([0-9]+)/$                                                        /category.php?id=96&page=$1 last;
+rewrite ^/Hermessite/Stevebags/$                                                                 /category.php?id=96 last;
+rewrite ^/Hermessite/Stevebags$                                                                  /category.php?id=96 last;
+
+rewrite ^/Chanelsale/Bowlingbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=43&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Bowlingbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=43&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Bowlingbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=43&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Bowlingbags-([0-9]+)/$                                                        /category.php?id=43&page=$1 last;
+rewrite ^/Chanelsale/Bowlingbags/$                                                                 /category.php?id=43 last;
+rewrite ^/Chanelsale/Bowlingbags$                                                                  /category.php?id=43 last;
+
+rewrite ^/Hermessite/Medorbagseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=87&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Medorbagseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=87&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Medorbagseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=87&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Medorbagseries-([0-9]+)/$                                                        /category.php?id=87&page=$1 last;
+rewrite ^/Hermessite/Medorbagseries/$                                                                 /category.php?id=87 last;
+rewrite ^/Hermessite/Medorbagseries$                                                                  /category.php?id=87 last;
+
+rewrite ^/Hermessite/Roulisseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=93&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Roulisseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=93&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Roulisseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=93&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Roulisseries-([0-9]+)/$                                                        /category.php?id=93&page=$1 last;
+rewrite ^/Hermessite/Roulisseries/$                                                                 /category.php?id=93 last;
+rewrite ^/Hermessite/Roulisseries$                                                                  /category.php?id=93 last;
+
+rewrite ^/Chanelsale/Shoppingpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=58&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Shoppingpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=58&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Shoppingpurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=58&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Shoppingpurses-([0-9]+)/$                                                        /category.php?id=58&page=$1 last;
+rewrite ^/Chanelsale/Shoppingpurses/$                                                                 /category.php?id=58 last;
+rewrite ^/Chanelsale/Shoppingpurses$                                                                  /category.php?id=58 last;
+
+rewrite ^/Hermessite/Feu2Doupurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=79&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Feu2Doupurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=79&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Feu2Doupurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=79&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Feu2Doupurse-([0-9]+)/$                                                        /category.php?id=79&page=$1 last;
+rewrite ^/Hermessite/Feu2Doupurse/$                                                                 /category.php?id=79 last;
+rewrite ^/Hermessite/Feu2Doupurse$                                                                  /category.php?id=79 last;
+
+rewrite ^/Hermessite/GoodNewsHbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=81&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/GoodNewsHbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=81&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/GoodNewsHbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=81&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/GoodNewsHbags-([0-9]+)/$                                                        /category.php?id=81&page=$1 last;
+rewrite ^/Hermessite/GoodNewsHbags/$                                                                 /category.php?id=81 last;
+rewrite ^/Hermessite/GoodNewsHbags$                                                                  /category.php?id=81 last;
+
+rewrite ^/Hermessite/LargeLeather-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=85&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/LargeLeather-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=85&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/LargeLeather-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=85&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/LargeLeather-([0-9]+)/$                                                        /category.php?id=85&page=$1 last;
+rewrite ^/Hermessite/LargeLeather/$                                                                 /category.php?id=85 last;
+rewrite ^/Hermessite/LargeLeather$                                                                  /category.php?id=85 last;
+
+rewrite ^/Chanelsale/Clutcheline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=49&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Clutcheline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=49&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Clutcheline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=49&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Clutcheline-([0-9]+)/$                                                        /category.php?id=49&page=$1 last;
+rewrite ^/Chanelsale/Clutcheline/$                                                                 /category.php?id=49 last;
+rewrite ^/Chanelsale/Clutcheline$                                                                  /category.php?id=49 last;
+
+rewrite ^/Hermessite/businesscase-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=75&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/businesscase-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=75&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/businesscase-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=75&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/businesscase-([0-9]+)/$                                                        /category.php?id=75&page=$1 last;
+rewrite ^/Hermessite/businesscase/$                                                                 /category.php?id=75 last;
+rewrite ^/Hermessite/businesscase$                                                                  /category.php?id=75 last;
+
+rewrite ^/Celinepurse/Otherbagshandbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=40&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/Otherbagshandbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=40&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/Otherbagshandbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=40&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/Otherbagshandbags-([0-9]+)/$                                                        /category.php?id=40&page=$1 last;
+rewrite ^/Celinepurse/Otherbagshandbags/$                                                                 /category.php?id=40 last;
+rewrite ^/Celinepurse/Otherbagshandbags$                                                                  /category.php?id=40 last;
+
+rewrite ^/Chanelsale/Otherspurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=55&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Otherspurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=55&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Otherspurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=55&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Otherspurses-([0-9]+)/$                                                        /category.php?id=55&page=$1 last;
+rewrite ^/Chanelsale/Otherspurses/$                                                                 /category.php?id=55 last;
+rewrite ^/Chanelsale/Otherspurses$                                                                  /category.php?id=55 last;
+
+rewrite ^/Chanelsale/Wallets-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=60&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Wallets-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=60&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Wallets-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=60&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Wallets-([0-9]+)/$                                                        /category.php?id=60&page=$1 last;
+rewrite ^/Chanelsale/Wallets/$                                                                 /category.php?id=60 last;
+rewrite ^/Chanelsale/Wallets$                                                                  /category.php?id=60 last;
+
+rewrite ^/Guccibags/Totebag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=69&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Totebag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=69&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Totebag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=69&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Totebag-([0-9]+)/$                                                        /category.php?id=69&page=$1 last;
+rewrite ^/Guccibags/Totebag/$                                                                 /category.php?id=69 last;
+rewrite ^/Guccibags/Totebag$                                                                  /category.php?id=69 last;
+
+rewrite ^/Guccibags/Shouldercollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=67&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Shouldercollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=67&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Shouldercollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=67&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Shouldercollection-([0-9]+)/$                                                        /category.php?id=67&page=$1 last;
+rewrite ^/Guccibags/Shouldercollection/$                                                                 /category.php?id=67 last;
+rewrite ^/Guccibags/Shouldercollection$                                                                  /category.php?id=67 last;
+
+rewrite ^/Guccibags/Hobobag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=64&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Hobobag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=64&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Hobobag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=64&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Hobobag-([0-9]+)/$                                                        /category.php?id=64&page=$1 last;
+rewrite ^/Guccibags/Hobobag/$                                                                 /category.php?id=64 last;
+rewrite ^/Guccibags/Hobobag$                                                                  /category.php?id=64 last;
+
+rewrite ^/Guccibags/TopHandlebagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=68&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/TopHandlebagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=68&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/TopHandlebagsseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=68&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/TopHandlebagsseries-([0-9]+)/$                                                        /category.php?id=68&page=$1 last;
+rewrite ^/Guccibags/TopHandlebagsseries/$                                                                 /category.php?id=68 last;
+rewrite ^/Guccibags/TopHandlebagsseries$                                                                  /category.php?id=68 last;
+
+rewrite ^/Guccibags/Messengerseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=65&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Messengerseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=65&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Messengerseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=65&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Messengerseries-([0-9]+)/$                                                        /category.php?id=65&page=$1 last;
+rewrite ^/Guccibags/Messengerseries/$                                                                 /category.php?id=65 last;
+rewrite ^/Guccibags/Messengerseries$                                                                  /category.php?id=65 last;
+
+rewrite ^/Guccibags/Eveningseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=62&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Eveningseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=62&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Eveningseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=62&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Eveningseries-([0-9]+)/$                                                        /category.php?id=62&page=$1 last;
+rewrite ^/Guccibags/Eveningseries/$                                                                 /category.php?id=62 last;
+rewrite ^/Guccibags/Eveningseries$                                                                  /category.php?id=62 last;
+
+rewrite ^/Guccibags/TravelCasesline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=70&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/TravelCasesline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=70&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/TravelCasesline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=70&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/TravelCasesline-([0-9]+)/$                                                        /category.php?id=70&page=$1 last;
+rewrite ^/Guccibags/TravelCasesline/$                                                                 /category.php?id=70 last;
+rewrite ^/Guccibags/TravelCasesline$                                                                  /category.php?id=70 last;
+
+rewrite ^/Guccibags/BackPackseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=61&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/BackPackseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=61&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/BackPackseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=61&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/BackPackseries-([0-9]+)/$                                                        /category.php?id=61&page=$1 last;
+rewrite ^/Guccibags/BackPackseries/$                                                                 /category.php?id=61 last;
+rewrite ^/Guccibags/BackPackseries$                                                                  /category.php?id=61 last;
+
+rewrite ^/Guccibags/Cosmeticseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=63&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Cosmeticseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=63&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Cosmeticseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=63&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Cosmeticseries-([0-9]+)/$                                                        /category.php?id=63&page=$1 last;
+rewrite ^/Guccibags/Cosmeticseries/$                                                                 /category.php?id=63 last;
+rewrite ^/Guccibags/Cosmeticseries$                                                                  /category.php?id=63 last;
+
+rewrite ^/Chanelsale/2.55ReissueFlap-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=41&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/2.55ReissueFlap-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=41&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/2.55ReissueFlap-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=41&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/2.55ReissueFlap-([0-9]+)/$                                                        /category.php?id=41&page=$1 last;
+rewrite ^/Chanelsale/2.55ReissueFlap/$                                                                 /category.php?id=41 last;
+rewrite ^/Chanelsale/2.55ReissueFlap$                                                                  /category.php?id=41 last;
+
+rewrite ^/Chanelsale/ClassicFlap-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=47&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/ClassicFlap-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=47&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/ClassicFlap-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=47&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/ClassicFlap-([0-9]+)/$                                                        /category.php?id=47&page=$1 last;
+rewrite ^/Chanelsale/ClassicFlap/$                                                                 /category.php?id=47 last;
+rewrite ^/Chanelsale/ClassicFlap$                                                                  /category.php?id=47 last;
+
+rewrite ^/Chanelsale/2012Chanelbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=42&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/2012Chanelbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=42&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/2012Chanelbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=42&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/2012Chanelbag-([0-9]+)/$                                                        /category.php?id=42&page=$1 last;
+rewrite ^/Chanelsale/2012Chanelbag/$                                                                 /category.php?id=42 last;
+rewrite ^/Chanelsale/2012Chanelbag$                                                                  /category.php?id=42 last;
+
+rewrite ^/Chanelsale/BoyChanelbagsline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=44&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/BoyChanelbagsline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=44&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/BoyChanelbagsline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=44&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/BoyChanelbagsline-([0-9]+)/$                                                        /category.php?id=44&page=$1 last;
+rewrite ^/Chanelsale/BoyChanelbagsline/$                                                                 /category.php?id=44 last;
+rewrite ^/Chanelsale/BoyChanelbagsline$                                                                  /category.php?id=44 last;
+
+rewrite ^/Chanelsale/Bubblebagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=45&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Bubblebagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=45&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Bubblebagsseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=45&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Bubblebagsseries-([0-9]+)/$                                                        /category.php?id=45&page=$1 last;
+rewrite ^/Chanelsale/Bubblebagsseries/$                                                                 /category.php?id=45 last;
+rewrite ^/Chanelsale/Bubblebagsseries$                                                                  /category.php?id=45 last;
+
+rewrite ^/Chanelsale/Cambonpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=46&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Cambonpurse-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=46&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Cambonpurse-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=46&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Cambonpurse-([0-9]+)/$                                                        /category.php?id=46&page=$1 last;
+rewrite ^/Chanelsale/Cambonpurse/$                                                                 /category.php?id=46 last;
+rewrite ^/Chanelsale/Cambonpurse$                                                                  /category.php?id=46 last;
+
+rewrite ^/Chanelsale/Classicbagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=48&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Classicbagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=48&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Classicbagsseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=48&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Classicbagsseries-([0-9]+)/$                                                        /category.php?id=48&page=$1 last;
+rewrite ^/Chanelsale/Classicbagsseries/$                                                                 /category.php?id=48 last;
+rewrite ^/Chanelsale/Classicbagsseries$                                                                  /category.php?id=48 last;
+
+rewrite ^/Chanelsale/Cocobagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=50&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Cocobagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=50&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Cocobagsseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=50&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Cocobagsseries-([0-9]+)/$                                                        /category.php?id=50&page=$1 last;
+rewrite ^/Chanelsale/Cocobagsseries/$                                                                 /category.php?id=50 last;
+rewrite ^/Chanelsale/Cocobagsseries$                                                                  /category.php?id=50 last;
+
+rewrite ^/Chanelsale/Cover-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=51&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Cover-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=51&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Cover-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=51&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Cover-([0-9]+)/$                                                        /category.php?id=51&page=$1 last;
+rewrite ^/Chanelsale/Cover/$                                                                 /category.php?id=51 last;
+rewrite ^/Chanelsale/Cover$                                                                  /category.php?id=51 last;
+
+rewrite ^/Chanelsale/iPhone-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=52&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/iPhone-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=52&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/iPhone-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=52&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/iPhone-([0-9]+)/$                                                        /category.php?id=52&page=$1 last;
+rewrite ^/Chanelsale/iPhone/$                                                                 /category.php?id=52 last;
+rewrite ^/Chanelsale/iPhone$                                                                  /category.php?id=52 last;
+
+rewrite ^/Chanelsale/Minibagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=53&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Minibagsseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=53&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Minibagsseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=53&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Minibagsseries-([0-9]+)/$                                                        /category.php?id=53&page=$1 last;
+rewrite ^/Chanelsale/Minibagsseries/$                                                                 /category.php?id=53 last;
+rewrite ^/Chanelsale/Minibagsseries$                                                                  /category.php?id=53 last;
+
+rewrite ^/Chanelsale/ParisMoscowRomanovbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=56&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/ParisMoscowRomanovbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=56&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/ParisMoscowRomanovbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=56&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/ParisMoscowRomanovbag-([0-9]+)/$                                                        /category.php?id=56&page=$1 last;
+rewrite ^/Chanelsale/ParisMoscowRomanovbag/$                                                                 /category.php?id=56 last;
+rewrite ^/Chanelsale/ParisMoscowRomanovbag$                                                                  /category.php?id=56 last;
+
+rewrite ^/Chanelsale/RosesChanelbag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=57&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/RosesChanelbag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=57&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/RosesChanelbag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=57&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/RosesChanelbag-([0-9]+)/$                                                        /category.php?id=57&page=$1 last;
+rewrite ^/Chanelsale/RosesChanelbag/$                                                                 /category.php?id=57 last;
+rewrite ^/Chanelsale/RosesChanelbag$                                                                  /category.php?id=57 last;
+
+rewrite ^/Chanelsale/Valentine-sdaybag-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=59&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Chanelsale/Valentine-sdaybag-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=59&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Chanelsale/Valentine-sdaybag-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=59&page=$1&sort=$2&order=$3 last;
+rewrite ^/Chanelsale/Valentine-sdaybag-([0-9]+)/$                                                        /category.php?id=59&page=$1 last;
+rewrite ^/Chanelsale/Valentine-sdaybag/$                                                                 /category.php?id=59 last;
+rewrite ^/Chanelsale/Valentine-sdaybag$                                                                  /category.php?id=59 last;
+
+rewrite ^/Celinepurse/Phantomline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=37&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/Phantomline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=37&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/Phantomline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=37&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/Phantomline-([0-9]+)/$                                                        /category.php?id=37&page=$1 last;
+rewrite ^/Celinepurse/Phantomline/$                                                                 /category.php?id=37 last;
+rewrite ^/Celinepurse/Phantomline$                                                                  /category.php?id=37 last;
+
+rewrite ^/Celinepurse/LuggageTotecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=36&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/LuggageTotecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=36&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/LuggageTotecollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=36&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/LuggageTotecollection-([0-9]+)/$                                                        /category.php?id=36&page=$1 last;
+rewrite ^/Celinepurse/LuggageTotecollection/$                                                                 /category.php?id=36 last;
+rewrite ^/Celinepurse/LuggageTotecollection$                                                                  /category.php?id=36 last;
+
+rewrite ^/Celinepurse/Trapezecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=38&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/Trapezecollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=38&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/Trapezecollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=38&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/Trapezecollection-([0-9]+)/$                                                        /category.php?id=38&page=$1 last;
+rewrite ^/Celinepurse/Trapezecollection/$                                                                 /category.php?id=38 last;
+rewrite ^/Celinepurse/Trapezecollection$                                                                  /category.php?id=38 last;
+
+rewrite ^/Celinepurse/ClaspBoxbags-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=39&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/ClaspBoxbags-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=39&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/ClaspBoxbags-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=39&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/ClaspBoxbags-([0-9]+)/$                                                        /category.php?id=39&page=$1 last;
+rewrite ^/Celinepurse/ClaspBoxbags/$                                                                 /category.php?id=39 last;
+rewrite ^/Celinepurse/ClaspBoxbags$                                                                  /category.php?id=39 last;
+
+rewrite ^/Celinepurse/DoctorFrameline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=35&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/DoctorFrameline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=35&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/DoctorFrameline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=35&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/DoctorFrameline-([0-9]+)/$                                                        /category.php?id=35&page=$1 last;
+rewrite ^/Celinepurse/DoctorFrameline/$                                                                 /category.php?id=35 last;
+rewrite ^/Celinepurse/DoctorFrameline$                                                                  /category.php?id=35 last;
+
+rewrite ^/Celinepurse/Cabasline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=34&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/Cabasline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=34&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/Cabasline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=34&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/Cabasline-([0-9]+)/$                                                        /category.php?id=34&page=$1 last;
+rewrite ^/Celinepurse/Cabasline/$                                                                 /category.php?id=34 last;
+rewrite ^/Celinepurse/Cabasline$                                                                  /category.php?id=34 last;
+
+rewrite ^/Hermessite/Originalcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=88&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Originalcollection-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=88&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Originalcollection-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=88&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Originalcollection-([0-9]+)/$                                                        /category.php?id=88&page=$1 last;
+rewrite ^/Hermessite/Originalcollection/$                                                                 /category.php?id=88 last;
+rewrite ^/Hermessite/Originalcollection$                                                                  /category.php?id=88 last;
+
+rewrite ^/Hermessite/Bowling-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=74&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Bowling-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=74&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Bowling-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=74&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Bowling-([0-9]+)/$                                                        /category.php?id=74&page=$1 last;
+rewrite ^/Hermessite/Bowling/$                                                                 /category.php?id=74 last;
+rewrite ^/Hermessite/Bowling$                                                                  /category.php?id=74 last;
+
+rewrite ^/Hermessite/Shoppingpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=94&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Shoppingpurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=94&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Shoppingpurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=94&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Shoppingpurses-([0-9]+)/$                                                        /category.php?id=94&page=$1 last;
+rewrite ^/Hermessite/Shoppingpurses/$                                                                 /category.php?id=94 last;
+rewrite ^/Hermessite/Shoppingpurses$                                                                  /category.php?id=94 last;
+
+rewrite ^/Hermessite/Clutchepurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=76&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Clutchepurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=76&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Clutchepurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=76&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Clutchepurses-([0-9]+)/$                                                        /category.php?id=76&page=$1 last;
+rewrite ^/Hermessite/Clutchepurses/$                                                                 /category.php?id=76 last;
+rewrite ^/Hermessite/Clutchepurses$                                                                  /category.php?id=76 last;
+
+rewrite ^/Hermessite/Otherbagsline-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=89&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Otherbagsline-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=89&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Otherbagsline-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=89&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Otherbagsline-([0-9]+)/$                                                        /category.php?id=89&page=$1 last;
+rewrite ^/Hermessite/Otherbagsline/$                                                                 /category.php?id=89 last;
+rewrite ^/Hermessite/Otherbagsline$                                                                  /category.php?id=89 last;
+
+rewrite ^/Hermessite/Otherspurses-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=90&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Otherspurses-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=90&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Otherspurses-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=90&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Otherspurses-([0-9]+)/$                                                        /category.php?id=90&page=$1 last;
+rewrite ^/Hermessite/Otherspurses/$                                                                 /category.php?id=90 last;
+rewrite ^/Hermessite/Otherspurses$                                                                  /category.php?id=90 last;
+
+rewrite ^/Hermessite/Wallet-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=99&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Hermessite/Wallet-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=99&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Hermessite/Wallet-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=99&page=$1&sort=$2&order=$3 last;
+rewrite ^/Hermessite/Wallet-([0-9]+)/$                                                        /category.php?id=99&page=$1 last;
+rewrite ^/Hermessite/Wallet/$                                                                 /category.php?id=99 last;
+rewrite ^/Hermessite/Wallet$                                                                  /category.php?id=99 last;
+
+rewrite ^/Guccibags/Otherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=66&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Otherseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=66&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Otherseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=66&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Otherseries-([0-9]+)/$                                                        /category.php?id=66&page=$1 last;
+rewrite ^/Guccibags/Otherseries/$                                                                 /category.php?id=66 last;
+rewrite ^/Guccibags/Otherseries$                                                                  /category.php?id=66 last;
+
+rewrite ^/Guccibags/Walletseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=71&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Guccibags/Walletseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=71&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Guccibags/Walletseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=71&page=$1&sort=$2&order=$3 last;
+rewrite ^/Guccibags/Walletseries-([0-9]+)/$                                                        /category.php?id=71&page=$1 last;
+rewrite ^/Guccibags/Walletseries/$                                                                 /category.php?id=71 last;
+rewrite ^/Guccibags/Walletseries$                                                                  /category.php?id=71 last;
+
+rewrite ^/Celinepurse/Walletseries-attr([^-]*)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)/$   /category.php?id=135&filter_attr=$1&price_min=$2&price_max=$3&page=$4&sort=$5&order=$6 last; 
+rewrite ^/Celinepurse/Walletseries-attr([^-]*)-min([0-9]+)-max([0-9]+)/$                             /category.php?id=135&filter_attr=$1&price_min=$2&price_max=$3 last;
+rewrite ^/Celinepurse/Walletseries-([0-9]+)-(.+)-([a-zA-Z]+)/$                                       /category.php?id=135&page=$1&sort=$2&order=$3 last;
+rewrite ^/Celinepurse/Walletseries-([0-9]+)/$                                                        /category.php?id=135&page=$1 last;
+rewrite ^/Celinepurse/Walletseries/$                                                                 /category.php?id=135 last;
+rewrite ^/Celinepurse/Walletseries$                                                                  /category.php?id=135 last;
+
+rewrite ^/(.*)/(.*)/model-([0-9]+)\.html$                                  /goods.php?yi_url=$1&er_url=$2&id=$3 last;
+rewrite ^/(.*)/model-([0-9]+)\.html$                        				   /goods.php?yi_url=$1&id=$2 last;
+
+rewrite ^/articles/$                                  /article_fenlei.php last;
+rewrite ^/articles$                                  /article_fenlei.php last;
+
+rewrite ^/articles/Vuittonbagbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=121&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Vuittonbagbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=121&page=$1&keywords=$2 last;
+rewrite ^/articles/Vuittonbagbrandnews-([0-9]+)/$                   /article_cat.php?id=121&page=$1 last;
+rewrite ^/articles/Vuittonbagbrandnews/$                            /article_cat.php?id=121 last;
+rewrite ^/articles/Vuittonbagbrandnews$                             /article_cat.php?id=121 last;
+
+rewrite ^/articles/Chanelpursesbrandinfo-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=109&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Chanelpursesbrandinfo-([0-9]+)-(.+)/$              /article_cat.php?id=109&page=$1&keywords=$2 last;
+rewrite ^/articles/Chanelpursesbrandinfo-([0-9]+)/$                   /article_cat.php?id=109&page=$1 last;
+rewrite ^/articles/Chanelpursesbrandinfo/$                            /article_cat.php?id=109 last;
+rewrite ^/articles/Chanelpursesbrandinfo$                             /article_cat.php?id=109 last;
+
+rewrite ^/articles/Guccihandbagbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=116&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Guccihandbagbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=116&page=$1&keywords=$2 last;
+rewrite ^/articles/Guccihandbagbrandnews-([0-9]+)/$                   /article_cat.php?id=116&page=$1 last;
+rewrite ^/articles/Guccihandbagbrandnews/$                            /article_cat.php?id=116 last;
+rewrite ^/articles/Guccihandbagbrandnews$                             /article_cat.php?id=116 last;
+
+rewrite ^/articles/Hermesbagsnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=117&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Hermesbagsnews-([0-9]+)-(.+)/$              /article_cat.php?id=117&page=$1&keywords=$2 last;
+rewrite ^/articles/Hermesbagsnews-([0-9]+)/$                   /article_cat.php?id=117&page=$1 last;
+rewrite ^/articles/Hermesbagsnews/$                            /article_cat.php?id=117 last;
+rewrite ^/articles/Hermesbagsnews$                             /article_cat.php?id=117 last;
+
+rewrite ^/articles/Celinehandbagbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=108&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Celinehandbagbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=108&page=$1&keywords=$2 last;
+rewrite ^/articles/Celinehandbagbrandnews-([0-9]+)/$                   /article_cat.php?id=108&page=$1 last;
+rewrite ^/articles/Celinehandbagbrandnews/$                            /article_cat.php?id=108 last;
+rewrite ^/articles/Celinehandbagbrandnews$                             /article_cat.php?id=108 last;
+
+rewrite ^/articles/Balenciagabagarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=103&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Balenciagabagarticles-([0-9]+)-(.+)/$              /article_cat.php?id=103&page=$1&keywords=$2 last;
+rewrite ^/articles/Balenciagabagarticles-([0-9]+)/$                   /article_cat.php?id=103&page=$1 last;
+rewrite ^/articles/Balenciagabagarticles/$                            /article_cat.php?id=103 last;
+rewrite ^/articles/Balenciagabagarticles$                             /article_cat.php?id=103 last;
+
+rewrite ^/articles/Pradasaleessay-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=125&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Pradasaleessay-([0-9]+)-(.+)/$              /article_cat.php?id=125&page=$1&keywords=$2 last;
+rewrite ^/articles/Pradasaleessay-([0-9]+)/$                   /article_cat.php?id=125&page=$1 last;
+rewrite ^/articles/Pradasaleessay/$                            /article_cat.php?id=125 last;
+rewrite ^/articles/Pradasaleessay$                             /article_cat.php?id=125 last;
+
+rewrite ^/articles/Burberrysaleessay-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=105&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Burberrysaleessay-([0-9]+)-(.+)/$              /article_cat.php?id=105&page=$1&keywords=$2 last;
+rewrite ^/articles/Burberrysaleessay-([0-9]+)/$                   /article_cat.php?id=105&page=$1 last;
+rewrite ^/articles/Burberrysaleessay/$                            /article_cat.php?id=105 last;
+rewrite ^/articles/Burberrysaleessay$                             /article_cat.php?id=105 last;
+
+rewrite ^/articles/BottegaVenetasitebrandarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=104&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/BottegaVenetasitebrandarticles-([0-9]+)-(.+)/$              /article_cat.php?id=104&page=$1&keywords=$2 last;
+rewrite ^/articles/BottegaVenetasitebrandarticles-([0-9]+)/$                   /article_cat.php?id=104&page=$1 last;
+rewrite ^/articles/BottegaVenetasitebrandarticles/$                            /article_cat.php?id=104 last;
+rewrite ^/articles/BottegaVenetasitebrandarticles$                             /article_cat.php?id=104 last;
+
+rewrite ^/articles/Fendihandbagbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=114&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Fendihandbagbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=114&page=$1&keywords=$2 last;
+rewrite ^/articles/Fendihandbagbrandnews-([0-9]+)/$                   /article_cat.php?id=114&page=$1 last;
+rewrite ^/articles/Fendihandbagbrandnews/$                            /article_cat.php?id=114 last;
+rewrite ^/articles/Fendihandbagbrandnews$                             /article_cat.php?id=114 last;
+
+rewrite ^/articles/Diorbagarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=112&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Diorbagarticles-([0-9]+)-(.+)/$              /article_cat.php?id=112&page=$1&keywords=$2 last;
+rewrite ^/articles/Diorbagarticles-([0-9]+)/$                   /article_cat.php?id=112&page=$1 last;
+rewrite ^/articles/Diorbagarticles/$                            /article_cat.php?id=112 last;
+rewrite ^/articles/Diorbagarticles$                             /article_cat.php?id=112 last;
+
+rewrite ^/articles/MiuMiubagarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=123&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/MiuMiubagarticles-([0-9]+)-(.+)/$              /article_cat.php?id=123&page=$1&keywords=$2 last;
+rewrite ^/articles/MiuMiubagarticles-([0-9]+)/$                   /article_cat.php?id=123&page=$1 last;
+rewrite ^/articles/MiuMiubagarticles/$                            /article_cat.php?id=123 last;
+rewrite ^/articles/MiuMiubagarticles$                             /article_cat.php?id=123 last;
+
+rewrite ^/articles/Mulberrypursesbrandinfo-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=124&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Mulberrypursesbrandinfo-([0-9]+)-(.+)/$              /article_cat.php?id=124&page=$1&keywords=$2 last;
+rewrite ^/articles/Mulberrypursesbrandinfo-([0-9]+)/$                   /article_cat.php?id=124&page=$1 last;
+rewrite ^/articles/Mulberrypursesbrandinfo/$                            /article_cat.php?id=124 last;
+rewrite ^/articles/Mulberrypursesbrandinfo$                             /article_cat.php?id=124 last;
+
+rewrite ^/articles/YSLtoteessays-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=133&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/YSLtoteessays-([0-9]+)-(.+)/$              /article_cat.php?id=133&page=$1&keywords=$2 last;
+rewrite ^/articles/YSLtoteessays-([0-9]+)/$                   /article_cat.php?id=133&page=$1 last;
+rewrite ^/articles/YSLtoteessays/$                            /article_cat.php?id=133 last;
+rewrite ^/articles/YSLtoteessays$                             /article_cat.php?id=133 last;
+
+rewrite ^/articles/JimmyChooarticle-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=118&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/JimmyChooarticle-([0-9]+)-(.+)/$              /article_cat.php?id=118&page=$1&keywords=$2 last;
+rewrite ^/articles/JimmyChooarticle-([0-9]+)/$                   /article_cat.php?id=118&page=$1 last;
+rewrite ^/articles/JimmyChooarticle/$                            /article_cat.php?id=118 last;
+rewrite ^/articles/JimmyChooarticle$                             /article_cat.php?id=118 last;
+
+rewrite ^/articles/Chloetoteessays-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=110&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Chloetoteessays-([0-9]+)-(.+)/$              /article_cat.php?id=110&page=$1&keywords=$2 last;
+rewrite ^/articles/Chloetoteessays-([0-9]+)/$                   /article_cat.php?id=110&page=$1 last;
+rewrite ^/articles/Chloetoteessays/$                            /article_cat.php?id=110 last;
+rewrite ^/articles/Chloetoteessays$                             /article_cat.php?id=110 last;
+
+rewrite ^/articles/ThomasWyldepursesbrandinfo-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=130&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/ThomasWyldepursesbrandinfo-([0-9]+)-(.+)/$              /article_cat.php?id=130&page=$1&keywords=$2 last;
+rewrite ^/articles/ThomasWyldepursesbrandinfo-([0-9]+)/$                   /article_cat.php?id=130&page=$1 last;
+rewrite ^/articles/ThomasWyldepursesbrandinfo/$                            /article_cat.php?id=130 last;
+rewrite ^/articles/ThomasWyldepursesbrandinfo$                             /article_cat.php?id=130 last;
+
+rewrite ^/articles/Alexanderhandbagbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=102&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Alexanderhandbagbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=102&page=$1&keywords=$2 last;
+rewrite ^/articles/Alexanderhandbagbrandnews-([0-9]+)/$                   /article_cat.php?id=102&page=$1 last;
+rewrite ^/articles/Alexanderhandbagbrandnews/$                            /article_cat.php?id=102 last;
+rewrite ^/articles/Alexanderhandbagbrandnews$                             /article_cat.php?id=102 last;
+
+rewrite ^/articles/3.1PhillipLimsaleessay-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=101&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/3.1PhillipLimsaleessay-([0-9]+)-(.+)/$              /article_cat.php?id=101&page=$1&keywords=$2 last;
+rewrite ^/articles/3.1PhillipLimsaleessay-([0-9]+)/$                   /article_cat.php?id=101&page=$1 last;
+rewrite ^/articles/3.1PhillipLimsaleessay/$                            /article_cat.php?id=101 last;
+rewrite ^/articles/3.1PhillipLimsaleessay$                             /article_cat.php?id=101 last;
+
+rewrite ^/articles/MarcJacobsbagsnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=122&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/MarcJacobsbagsnews-([0-9]+)-(.+)/$              /article_cat.php?id=122&page=$1&keywords=$2 last;
+rewrite ^/articles/MarcJacobsbagsnews-([0-9]+)/$                   /article_cat.php?id=122&page=$1 last;
+rewrite ^/articles/MarcJacobsbagsnews/$                            /article_cat.php?id=122 last;
+rewrite ^/articles/MarcJacobsbagsnews$                             /article_cat.php?id=122 last;
+
+rewrite ^/articles/Dolce&Gabbanashopinformation-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=113&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Dolce&Gabbanashopinformation-([0-9]+)-(.+)/$              /article_cat.php?id=113&page=$1&keywords=$2 last;
+rewrite ^/articles/Dolce&Gabbanashopinformation-([0-9]+)/$                   /article_cat.php?id=113&page=$1 last;
+rewrite ^/articles/Dolce&Gabbanashopinformation/$                            /article_cat.php?id=113 last;
+rewrite ^/articles/Dolce&Gabbanashopinformation$                             /article_cat.php?id=113 last;
+
+rewrite ^/articles/ProenzaSchoulerarticle-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=126&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/ProenzaSchoulerarticle-([0-9]+)-(.+)/$              /article_cat.php?id=126&page=$1&keywords=$2 last;
+rewrite ^/articles/ProenzaSchoulerarticle-([0-9]+)/$                   /article_cat.php?id=126&page=$1 last;
+rewrite ^/articles/ProenzaSchoulerarticle/$                            /article_cat.php?id=126 last;
+rewrite ^/articles/ProenzaSchoulerarticle$                             /article_cat.php?id=126 last;
+
+rewrite ^/articles/Givenchybagsnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=115&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Givenchybagsnews-([0-9]+)-(.+)/$              /article_cat.php?id=115&page=$1&keywords=$2 last;
+rewrite ^/articles/Givenchybagsnews-([0-9]+)/$                   /article_cat.php?id=115&page=$1 last;
+rewrite ^/articles/Givenchybagsnews/$                            /article_cat.php?id=115 last;
+rewrite ^/articles/Givenchybagsnews$                             /article_cat.php?id=115 last;
+
+rewrite ^/articles/Bvlgarishopinformation-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=106&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Bvlgarishopinformation-([0-9]+)-(.+)/$              /article_cat.php?id=106&page=$1&keywords=$2 last;
+rewrite ^/articles/Bvlgarishopinformation-([0-9]+)/$                   /article_cat.php?id=106&page=$1 last;
+rewrite ^/articles/Bvlgarishopinformation/$                            /article_cat.php?id=106 last;
+rewrite ^/articles/Bvlgarishopinformation$                             /article_cat.php?id=106 last;
+
+rewrite ^/articles/Cartiersaleessay-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=107&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Cartiersaleessay-([0-9]+)-(.+)/$              /article_cat.php?id=107&page=$1&keywords=$2 last;
+rewrite ^/articles/Cartiersaleessay-([0-9]+)/$                   /article_cat.php?id=107&page=$1 last;
+rewrite ^/articles/Cartiersaleessay/$                            /article_cat.php?id=107 last;
+rewrite ^/articles/Cartiersaleessay$                             /article_cat.php?id=107 last;
+
+rewrite ^/articles/Lancelarticle-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=119&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Lancelarticle-([0-9]+)-(.+)/$              /article_cat.php?id=119&page=$1&keywords=$2 last;
+rewrite ^/articles/Lancelarticle-([0-9]+)/$                   /article_cat.php?id=119&page=$1 last;
+rewrite ^/articles/Lancelarticle/$                            /article_cat.php?id=119 last;
+rewrite ^/articles/Lancelarticle$                             /article_cat.php?id=119 last;
+
+rewrite ^/articles/Loewesaleessay-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=120&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Loewesaleessay-([0-9]+)-(.+)/$              /article_cat.php?id=120&page=$1&keywords=$2 last;
+rewrite ^/articles/Loewesaleessay-([0-9]+)/$                   /article_cat.php?id=120&page=$1 last;
+rewrite ^/articles/Loewesaleessay/$                            /article_cat.php?id=120 last;
+rewrite ^/articles/Loewesaleessay$                             /article_cat.php?id=120 last;
+
+rewrite ^/articles/Todspursebagarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=131&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Todspursebagarticles-([0-9]+)-(.+)/$              /article_cat.php?id=131&page=$1&keywords=$2 last;
+rewrite ^/articles/Todspursebagarticles-([0-9]+)/$                   /article_cat.php?id=131&page=$1 last;
+rewrite ^/articles/Todspursebagarticles/$                            /article_cat.php?id=131 last;
+rewrite ^/articles/Todspursebagarticles$                             /article_cat.php?id=131 last;
+
+rewrite ^/articles/StellaMcCartneyshopinformation-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=129&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/StellaMcCartneyshopinformation-([0-9]+)-(.+)/$              /article_cat.php?id=129&page=$1&keywords=$2 last;
+rewrite ^/articles/StellaMcCartneyshopinformation-([0-9]+)/$                   /article_cat.php?id=129&page=$1 last;
+rewrite ^/articles/StellaMcCartneyshopinformation/$                            /article_cat.php?id=129 last;
+rewrite ^/articles/StellaMcCartneyshopinformation$                             /article_cat.php?id=129 last;
+
+rewrite ^/articles/SamanthaThavasasitebrandarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=128&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/SamanthaThavasasitebrandarticles-([0-9]+)-(.+)/$              /article_cat.php?id=128&page=$1&keywords=$2 last;
+rewrite ^/articles/SamanthaThavasasitebrandarticles-([0-9]+)/$                   /article_cat.php?id=128&page=$1 last;
+rewrite ^/articles/SamanthaThavasasitebrandarticles/$                            /article_cat.php?id=128 last;
+rewrite ^/articles/SamanthaThavasasitebrandarticles$                             /article_cat.php?id=128 last;
+
+rewrite ^/articles/SalvatoreFerragamositebrandarticles-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=127&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/SalvatoreFerragamositebrandarticles-([0-9]+)-(.+)/$              /article_cat.php?id=127&page=$1&keywords=$2 last;
+rewrite ^/articles/SalvatoreFerragamositebrandarticles-([0-9]+)/$                   /article_cat.php?id=127&page=$1 last;
+rewrite ^/articles/SalvatoreFerragamositebrandarticles/$                            /article_cat.php?id=127 last;
+rewrite ^/articles/SalvatoreFerragamositebrandarticles$                             /article_cat.php?id=127 last;
+
+rewrite ^/articles/Coacharticle-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=111&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Coacharticle-([0-9]+)-(.+)/$              /article_cat.php?id=111&page=$1&keywords=$2 last;
+rewrite ^/articles/Coacharticle-([0-9]+)/$                   /article_cat.php?id=111&page=$1 last;
+rewrite ^/articles/Coacharticle/$                            /article_cat.php?id=111 last;
+rewrite ^/articles/Coacharticle$                             /article_cat.php?id=111 last;
+
+rewrite ^/articles/Valentinoshopinformation-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=132&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Valentinoshopinformation-([0-9]+)-(.+)/$              /article_cat.php?id=132&page=$1&keywords=$2 last;
+rewrite ^/articles/Valentinoshopinformation-([0-9]+)/$                   /article_cat.php?id=132&page=$1 last;
+rewrite ^/articles/Valentinoshopinformation/$                            /article_cat.php?id=132 last;
+rewrite ^/articles/Valentinoshopinformation$                             /article_cat.php?id=132 last;
+
+rewrite ^/articles/Otherbrandnews-([0-9]+)-(.+)-([a-zA-Z]+)/$  /article_cat.php?id=134&page=$1&sort=$2&order=$3 last;
+rewrite ^/articles/Otherbrandnews-([0-9]+)-(.+)/$              /article_cat.php?id=134&page=$1&keywords=$2 last;
+rewrite ^/articles/Otherbrandnews-([0-9]+)/$                   /article_cat.php?id=134&page=$1 last;
+rewrite ^/articles/Otherbrandnews/$                            /article_cat.php?id=134 last;
+rewrite ^/articles/Otherbrandnews$                             /article_cat.php?id=134 last;
+
+rewrite ^/articles/(.*)/luxuryessays-([0-9]+)\.html$               /article.php?url=$1&id=$2 last;
+
+rewrite ^/hotkeywords-([0-9]+)-(.+)-([a-zA-Z]+)/$  /tags_cat.php?id=10&page=$1&sort=$2&order=$3 last;
+rewrite ^/hotkeywords-([0-9]+)-(.+)/$              /tags_cat.php?id=10&page=$1&keywords=$2 last;
+rewrite ^/hotkeywords-([0-9]+)/$                   /tags_cat.php?id=10&page=$1 last;
+rewrite ^/hotkeywords/$                            /tags_cat.php?id=10 last;
+rewrite ^/hotkeywords$                             /tags_cat.php?id=10 last;
+
+rewrite ^/hotkeywords/hotlistterms-([0-9]+)\.html$               /tags.php?id=$1   last;
+
+rewrite ^/help/$                                  /help_fenlei.php last;
+rewrite ^/help$                                  /help_fenlei.php last;
+
+rewrite ^/help/about_our_site-([0-9]+)-(.+)-([a-zA-Z]+)/$  /help_cat.php?id=4&page=$1&sort=$2&order=$3 last;
+rewrite ^/help/about_our_site-([0-9]+)-(.+)/$              /help_cat.php?id=4&page=$1&keywords=$2 last;
+rewrite ^/help/about_our_site-([0-9]+)/$                   /help_cat.php?id=4&page=$1 last;
+rewrite ^/help/about_our_site/$                            /help_cat.php?id=4 last;
+rewrite ^/help/about_our_site$                             /help_cat.php?id=4 last;
+
+rewrite ^/help/manual-([0-9]+)-(.+)-([a-zA-Z]+)/$  /help_cat.php?id=5&page=$1&sort=$2&order=$3 last;
+rewrite ^/help/manual-([0-9]+)-(.+)/$              /help_cat.php?id=5&page=$1&keywords=$2 last;
+rewrite ^/help/manual-([0-9]+)/$                   /help_cat.php?id=5&page=$1 last;
+rewrite ^/help/manual/$                            /help_cat.php?id=5 last;
+rewrite ^/help/manual$                             /help_cat.php?id=5 last;
+
+rewrite ^/help/questions-([0-9]+)-(.+)-([a-zA-Z]+)/$  /help_cat.php?id=6&page=$1&sort=$2&order=$3 last;
+rewrite ^/help/questions-([0-9]+)-(.+)/$              /help_cat.php?id=6&page=$1&keywords=$2 last;
+rewrite ^/help/questions-([0-9]+)/$                   /help_cat.php?id=6&page=$1 last;
+rewrite ^/help/questions/$                            /help_cat.php?id=6 last;
+rewrite ^/help/questions$                             /help_cat.php?id=6 last;
+
+rewrite ^/help/rules-([0-9]+)-(.+)-([a-zA-Z]+)/$  /help_cat.php?id=7&page=$1&sort=$2&order=$3 last;
+rewrite ^/help/rules-([0-9]+)-(.+)/$              /help_cat.php?id=7&page=$1&keywords=$2 last;
+rewrite ^/help/rules-([0-9]+)/$                   /help_cat.php?id=7&page=$1 last;
+rewrite ^/help/rules/$                            /help_cat.php?id=7 last;
+rewrite ^/help/rules$                             /help_cat.php?id=7 last;
+
+rewrite ^/help/help_center-([0-9]+)-(.+)-([a-zA-Z]+)/$  /help_cat.php?id=8&page=$1&sort=$2&order=$3 last;
+rewrite ^/help/help_center-([0-9]+)-(.+)/$              /help_cat.php?id=8&page=$1&keywords=$2 last;
+rewrite ^/help/help_center-([0-9]+)/$                   /help_cat.php?id=8&page=$1 last;
+rewrite ^/help/help_center/$                            /help_cat.php?id=8 last;
+rewrite ^/help/help_center$                             /help_cat.php?id=8 last;
+
+rewrite ^/help/(.*)/aidpage-([0-9]+)\.html$               /help.php?url=$1&id=$2 last;
+}

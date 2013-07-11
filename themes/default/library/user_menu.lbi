@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<div id="lib_member_menu" class="lib_member_item_card">
+    <dl>
+        <dt>アカウント情報</dt>
+        <dd><a href="user.php">アカウント設定</a></dd>
+        <dd><a href="user.php?act=act_edit_info">個人情報編集</a></dd>
+        <dd><a href="user.php?act=edit_password">パスワード変更</a></dd>
+        <dt>お届け情報</dt>
+        <dd><a href="user.php?act=addressbook">お届け先管理</a></dd>
+        <dt>注文管理</dt>
+        <dd><a href="user.php?act=order_list">注文履歴</a></dd>
+        <dt>お買い物</dt>
+        <dd><a href="flow.php">お買い物かご</a></dd>
+        <dd><a href="user.php?act=collection_list">お気に入りリスト</a></dd>
+        <dt>ログアウト</dt>
+        <dd><a href="user.php?act=logout">ログアウト</a></dd>
+    </dl>
+</div>

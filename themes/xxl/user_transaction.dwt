@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="css/user.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/order.js"></script><!--库文件-->
+<script type="text/javascript" src="js/jquery-min.js"></script>
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="main wrap">
+    <div class="corners_top"></div><!--.corners_top-->
+    <div class="corners_center">
+        <!--当前位置 start-->
+        <div class="block box">
+         <div id="ur_here">
+          <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+         </div>
+        </div>
+        <!--当前位置 end-->
+        <div class="accout-box">
+            <div class="leftMenu">
+                <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+            </div>
+            <div class="rightContents">
+                <div class="member_module"> 
+                    
+                   <!-- {if $action eq 'order_list'} -->
+                    <div id="lib_member_orders">
+                        <div class="lib_member_title"><a href="/account.html?module=orders&amp;act=list">注文履歴</a></div>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="item_list">
+                            <tbody>
+                                <tr class="tb_title">
+                                    <td width="18%" nowrap="">注文番号</td>
+                                    <td width="13%" nowrap="">商品小計</td>
+                                    <td width="12%" nowrap="">送料</td>
+                                    <td width="13%" nowrap="">合計</td>
+                                    <td width="13%" nowrap="">注文日付</td>
+                                    <td width="14%" nowrap="">注文状況</td>
+                                    <td width="12%" nowrap="">支払い方法</td>
+                                </tr>
+                                <!--{foreach from=$orders item=item}-->
+                                <tr class="item_list_out" onmouseover="this.className='item_list_over';" onmouseout="this.className='item_list_out';" align="center">
+                                    <td nowrap=""><a href="user.php?act=order_detail&order_id={$item.order_id}" class="f6">{$item.order_sn}</a></td>
+                                    <td nowrap="">{$item.goods_amount}円</td>
+                                    <td nowrap="">{$item.shipping_fee}円</td>
+                                    <td nowrap="">{$item.total_fee}</td>
+                                    <td nowrap="">{$item.order_time}</td>
+                                    <td nowrap="">{$item.order_status}</td>
+                                    <td nowrap=""><a href="javascript:void(0);" onclick="payment_tips();">詳細</a></td>
+                                </tr>
+                                <!--{/foreach}-->
+          
+                            </tbody>
+                        </table>
+                        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+                      <script type="text/javascript">
+							function payment_tips(){
+							div_mask();
+							scroll_payment_tips_success();
+							scroll_payment_tips_success_timer=setInterval(scroll_payment_tips_success, 50);
+							}
+							
+							function close_payment_tips_success(){	//关闭弹出窗口
+							var obj = $_('lib_payment_tips_success');
+							obj.style.display = 'none';
+							document.body.removeChild($_('div_mask'));
+							clearInterval(scroll_payment_tips_success_timer);
+							}
+							
+							function scroll_payment_tips_success(){	//弹出框跟随滚动
+							var obj = $_('lib_payment_tips_success');
+							obj.style.display = 'block';
+							obj.style.left=(document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft)+doc.clientWidth/2-$_('lib_payment_tips_success').offsetWidth/2+'px';
+							obj.style.top=(document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)+doc.clientHeight/2-$_('lib_payment_tips_success').offsetHeight/2+'px';
+							}
+							</script>
+                  <div id="lib_payment_tips_success">
+                            <div class="close"><a href="javascript:void(0);" onclick="close_payment_tips_success();">閉じる</a> </div>
+                            <div class="tips"> 銀行振り込み<br />
+                                銀行名：JNB銀行<br />
+                                口座番号：1795940<br />
+                                口座名義：カ）サダモト ワタル<br />
+                                振込手数料はお客様負担でお願い致します。 
+                </div>
+                        </div>
+                        <div id="turn_page"></div>
+                    </div>
+        		   <!-- {/if}--> 
+                    
+                    
+                    
+                    <!--{if $action eq order_detail} -->
+                        <h5><span>{$lang.order_status}</span></h5>
+                        <div class="blank"></div>
+                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                        <tr>
+                          <td width="15%" align="right" bgcolor="#ffffff">{$lang.detail_order_sn}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.order_sn}
+                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.detail_order_status}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.order_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.confirm_time}</td>
+                        </tr>
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.detail_pay_status}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.pay_status}&nbsp;&nbsp;&nbsp;&nbsp;{if $order.order_amount gt 0}{$order.pay_online}{/if}{$order.pay_time}</td>
+                        </tr>
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.detail_shipping_status}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.shipping_status}&nbsp;&nbsp;&nbsp;&nbsp;{$order.shipping_time}</td>
+                        </tr>
+                        <!-- {if $order.invoice_no}-->
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.consignment}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.invoice_no}</td>
+                        </tr>
+                        <!--{/if}-->
+                        <!--{if $order.to_buyer}-->
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.detail_to_buyer}：</td>
+                          <td align="left" bgcolor="#ffffff">{$order.to_buyer}</td>
+                        </tr>
+                        <!-- {/if} -->
+                
+                        <!--{if $virtual_card}-->
+                        <tr>
+                          <td align="right" bgcolor="#ffffff">{$lang.virtual_card_info}：</td>
+                          <td colspan="3" align="left" bgcolor="#ffffff">
+                          <!--{foreach from=$virtual_card item=vgoods}-->
+                            <!--{foreach from=$vgoods.info item=card}-->
+                              <!--{if $card.card_sn}-->{$lang.card_sn}:<span style="color:red;">{$card.card_sn}</span><!--{/if}-->
+                              <!--{if $card.card_password}-->{$lang.card_password}:<span style="color:red;">{$card.card_password}</span><!--{/if}-->
+                              <!--{if $card.end_date}-->{$lang.end_date}:{$card.end_date}<!--{/if}--><br />
+                            <!--{/foreach}-->
+                          <!--{/foreach}-->
+                          </td>
+                        </tr>
+                        <!--{/if}-->
+                      </table>
+                        <div class="blank"></div>
+                        <h5><span>{$lang.goods_list}</span>
+                        <!-- {if $allow_to_cart} -->
+                        <a href="javascript:;" onclick="returnToCart({$order.order_id})" class="f6">{$lang.return_to_cart}</a>
+                        <!-- {/if} -->
+                        </h5>
+                  <div class="blank"></div>
+                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                          <tr>
+                            <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
+                            
+                            <!--<th>{$lang.market_price}</th>-->
+                            <th width="26%" align="center" bgcolor="#ffffff">{$lang.goods_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} --></th>
+                            <th width="9%" align="center" bgcolor="#ffffff">{$lang.number}</th>
+                            <th width="20%" align="center" bgcolor="#ffffff">合計</th>
+                          </tr>
+                          <!-- {foreach from=$goods_list item=goods} -->
+                          <tr>
+                            <td bgcolor="#ffffff">
+                              <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
+                                <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
+                                <!-- {if $goods.parent_id > 0} -->
+                                <span style="color:#FF0000">（{$lang.accessories}）</span>
+                                <!-- {elseif $goods.is_gift} -->
+                                <span style="color:#FF0000">（{$lang.largess}）</span>
+                                <!-- {/if} -->
+                              <!-- {elseif $goods.goods_id gt 0 && $goods.extension_code eq 'package_buy'} -->
+                                <a href="javascript:void(0)" onclick="setSuitShow({$goods.goods_id})" class="f6">{$goods.goods_name}<span style="color:#FF0000;">（礼包）</span></a>
+                                <div id="suit_{$goods.goods_id}" style="display:none">
+                                    <!-- {foreach from=$goods.package_goods_list item=package_goods_list} -->
+                                      <a href="goods.php?id={$package_goods_list.goods_id}" target="_blank" class="f6">{$package_goods_list.goods_name}</a><br />
+                                    <!-- {/foreach} -->
+                                </div>
+                              <!-- {/if} -->
+                              </td>
+                            
+                            <!--<td align="right">{$goods.market_price}</td>-->
+                            <td align="center" bgcolor="#ffffff">{$goods.goods_price}</td>
+                            <td align="center" bgcolor="#ffffff">{$goods.goods_number}</td>
+                            <td align="center" bgcolor="#ffffff">{$goods.subtotal}</td>
+                          </tr>
+                          <!-- {/foreach} -->
+                          <tr>
+                            <td colspan="8" bgcolor="#ffffff" align="right">
+                            {$lang.shopping_money}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
+                            </td>
+                          </tr>
+                        </table>
+             <div class="blank"></div>
+                        <h5><span>{$lang.fee_total}</span></h5>
+                        <div class="blank"></div>
+                         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                          <tr>
+                            <td align="right" bgcolor="#ffffff">
+                                {$lang.goods_all_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->: {$order.formated_goods_amount}
+                              <!-- {if $order.discount gt 0} 折扣 -->
+                              - {$lang.discount}: {$order.formated_discount}
+                              <!-- {/if} -->
+                              <!-- {if $order.tax gt 0} -->
+                              + {$lang.tax}: {$order.formated_tax}
+                              <!-- {/if} -->
+                              <!-- {if $order.shipping_fee > 0} -->
+                              + {$lang.shipping_fee}: {$order.formated_shipping_fee}
+                              <!-- {/if} -->
+                              <!-- {if $order.insure_fee > 0} -->
+                              + {$lang.insure_fee}: {$order.formated_insure_fee}
+                              <!-- {/if} -->
+                              <!-- {if $order.pay_fee > 0} -->
+                              + {$lang.pay_fee}: {$order.formated_pay_fee}
+                              <!-- {/if} -->
+                              <!-- {if $order.pack_fee > 0} -->
+                              + {$lang.pack_fee}: {$order.formated_pack_fee}
+                              <!-- {/if} -->
+                              <!-- {if $order.card_fee > 0} -->
+                              + {$lang.card_fee}: {$order.formated_card_fee}
+                              <!-- {/if} -->        </td>
+                          </tr>
+                          <tr>
+                            <td align="right" bgcolor="#ffffff">
+                              <!-- {if $order.money_paid > 0} -->
+                              - {$lang.order_money_paid}: {$order.formated_money_paid}
+                              <!-- {/if} -->
+                              <!-- {if $order.surplus > 0} -->
+                              - {$lang.use_surplus}: {$order.formated_surplus}
+                              <!-- {/if} -->
+                              <!-- {if $order.integral_money > 0} -->
+                              - {$lang.use_integral}: {$order.formated_integral_money}
+                              <!-- {/if} -->
+                              <!-- {if $order.bonus > 0} -->
+                              - {$lang.use_bonus}: {$order.formated_bonus}
+                              <!-- {/if} -->        </td>
+                          </tr>
+                          <tr>
+                            <td align="right" bgcolor="#ffffff">{$lang.order_amount}: {$order.total_price}.00円
+                            <!-- {if $order.extension_code eq "group_buy"} --><br />
+                            {$lang.notice_gb_order_amount}<!-- {/if} --></td>
+                          </tr>
+                            <!-- {if $allow_edit_surplus} 如果可以编辑使用余额数 -->
+                          <tr>
+                            <td align="right" bgcolor="#ffffff">
+                      <form action="user.php" method="post" name="formFee" id="formFee">{$lang.use_more_surplus}:
+                            <input name="surplus" type="text" size="8" value="0" style="border:1px solid #ccc;"/>{$max_surplus}
+                            <input type="submit" name="Submit" class="submit" value="{$lang.button_submit}" />
+                      <input type="hidden" name="act" value="act_edit_surplus" />
+                      <input type="hidden" name="order_id" value="{$smarty.get.order_id}" />
+                      </form></td>
+                          </tr>
+                    <!--{/if}-->
+                        </table>
+                         <div class="blank"></div>
+                        <h5><span>{$lang.consignee_info}</span></h5>
+                        <div class="blank"></div>
+                         <!-- {if $order.allow_update_address gt 0} -->
+                          <form action="user.php" method="post" name="formAddress" id="formAddress">
+                           <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                              <tr>
+                                <td width="20%" align="right" bgcolor="#ffffff">{$lang.consignee_name}： </td>
+                                <td width="30%" align="left" bgcolor="#ffffff">{$order.consignee|escape}
+                                </td>
+                                <td width="20%" align="right" bgcolor="#ffffff">{$lang.email_address}： </td>
+                                <td width="30%" align="left" bgcolor="#ffffff">{$order.email|escape}
+                                </td>
+                              </tr>
+                              <!-- {if $order.exist_real_goods} -->
+                              <!-- 只有虚拟商品处理-->
+                              <tr>
+                                <td align="right" bgcolor="#ffffff">{$lang.detailed_address}： </td>
+                                <td align="left" bgcolor="#ffffff">{$order.State}&nbsp;{$order.City}&nbsp;{$order.Room}&nbsp;{$order.AddressLine}</td>
+                                <td align="right" bgcolor="#ffffff">{$lang.postalcode}：</td>
+                                <td align="left" bgcolor="#ffffff">{$order.PostalCode|escape}</td>
+                              </tr>
+                              <!--{/if}-->
+                              <tr>
+                                <td align="right" bgcolor="#ffffff">{$lang.phone}：</td>
+                                <td align="left" bgcolor="#ffffff">{$order.Phone|escape}</td>
+                                <td align="right" bgcolor="#ffffff">{$lang.sign_building}：</td>
+                                <td align="left" bgcolor="#ffffff">{$order.Room|escape}</td>
+                              </tr>
+                              
+                              <tr>
+                                <td colspan="4" align="center" bgcolor="#ffffff"><input type="hidden" name="act" value="save_order_address" />
+                                  
+                                </td>
+                              </tr>
+                            </table>
+                          </form>
+                          <!-- {else} -->
+                          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                            <tr>
+                              <td width="26%" align="right" bgcolor="#ffffff">{$lang.consignee_name}：</td>
+                              <td width="27%" align="left" bgcolor="#ffffff">{$order.consignee}</td>
+                              <td width="20%" align="right" bgcolor="#ffffff" >{$lang.email_address}：</td>
+                              <td width="27%" align="left" bgcolor="#ffffff">{$order.email}</td>
+                            </tr>
+                            <!-- {if $order.exist_real_goods} -->
+                            <tr>
+                              <td align="right" bgcolor="#ffffff">{$lang.detailed_address}：</td>
+                              <td colspan="3" align="left" bgcolor="#ffffff">{$order.State} {$order.City} {$order.AddressLine}
+                                <!-- {if $order.zipcode} -->
+                                [{$lang.postalcode}: {$order.PostalCode}]
+                                <!-- {/if} --></td>
+                            </tr>
+                            <!-- {/if}-->
+                            <tr>
+                              <td align="right" bgcolor="#ffffff">{$lang.phone}：</td>
+                              <td colspan="3" align="left" bgcolor="#ffffff">{$order.Phone} </td>
+                            </tr>
+                            <!-- {if $order.exist_real_goods} -->
+                            <tr>
+                              <td align="right" bgcolor="#ffffff" >{$lang.sign_building}：</td>
+                              <td colspan="3" align="left" bgcolor="#ffffff">{$order.Room}</td>
+                            </tr>
+                            <!--{/if}-->
+                          </table>
+                          <!-- {/if} -->
+							<div class="blank"></div>
+                        
+                        <div class="blank"></div>
+                        <h5><span>{$lang.other_info}</span></h5>
+                        <div class="blank"></div>
+                        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                          <!-- {if $order.shipping_id > 0} -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.shipping}：</td>
+                            <td colspan="3" width="85%" align="left" bgcolor="#ffffff">{$order.shipping_name}</td>
+                          </tr>
+                          <!-- {/if} -->
+                
+                          <!--{if $order.insure_fee > 0}-->
+                          <!--{/if}-->
+                          <!-- {if $order.pack_name} 是否使用包装 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.use_pack}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.pack_name}</td>
+                          </tr>
+                          <!-- {/if} 是否使用包装 -->
+                          <!-- {if $order.card_name} 是否使用贺卡 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.use_card}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.card_name}</td>
+                          </tr>
+                          <!-- {/if} -->
+                          <!-- {if $order.card_message} 是否使用贺卡 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.bless_note}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.card_message}</td>
+                          </tr>
+                          <!-- {/if} 是否使用贺卡 -->
+                          <!-- {if $order.surplus > 0} 是否使用余额 -->
+                          <!-- {/if} -->
+                          <!-- {if $order.integral > 0} 是否使用积分 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.use_integral}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.integral}</td>
+                          </tr>
+                          <!-- {/if} 是否使用积分 -->
+                          <!-- {if $order.bonus > 0} 是否使用红包 -->
+                          <!-- {/if} -->
+                          <!-- {if $order.inv_payee && $order.inv_content} 是否开发票 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.invoice_title}：</td>
+                            <td width="36%" align="left" bgcolor="#ffffff">{$order.inv_payee}</td>
+                            <td width="19%" align="right" bgcolor="#ffffff">{$lang.invoice_content}：</td>
+                            <td width="25%" align="left" bgcolor="#ffffff">{$order.inv_content}</td>
+                          </tr>
+                          <!-- {/if} -->
+                          <!-- {if $order.postscript} 是否有订单附言 -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.order_postscript}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.postscript}</td>
+                          </tr>
+                          <!-- {/if} -->
+                          <tr>
+                            <td width="15%" align="right" bgcolor="#ffffff">{$lang.booking_process}：</td>
+                            <td colspan="3" align="left" bgcolor="#ffffff">{$order.how_oos_name}</td>
+                          </tr>
+                        </table>
+                      <!--{/if} -->
+                    <!--#订单详情页 end-->
+                    
+                </div>
+            </div>
+            </div>
+        
+        
+        
+        
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    </div><!--.corners_center end-->
+    <div class="corners_bot"></div><!--.corners_bot-->
+</div><!--.main end-->
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

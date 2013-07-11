@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/user.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-min.js"></script>
+
+{* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js,flows.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="main wrap">
+    <div class="corners_top"></div><!--.corners_top-->
+    <div class="corners_center">
+        <!--当前位置 start-->
+        <div class="block box">
+         <div id="ur_here">
+          <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+         </div>
+        </div>
+        <!--当前位置 end-->
+        <div class="accout-box">
+            <div class="leftMenu">
+                <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+            </div>
+            <div class="rightContents">
+                <div class="member_module"> 
+                    <!--管理-->
+                    <!-- {if $action eq 'default'} -->
+                    <div id="lib_member_index">
+                        <div class="lib_member_title">ようこそ！{$userinfo.FirstName}{$userinfo.LastName}【{$userinfo.email}】</div>
+                        <div class="lib_member_info">アカウント設定画面へようこそ。下記の内容を選択して、個人情報の更新、通信設定またご注文履歴チェックすることができます。</div>
+                        <div>
+                            <div class="item_card">
+                                <div class="title">個人情報</div>
+                                <div class="info lib_member_item_card"> <span>アカウント: </span>{$userinfo.email}<br>
+                                    <span>姓（氏名）: </span>{$userinfo.FirstName}<br>
+                                    <span>名（氏名）: </span>{$userinfo.LastName}<br>
+                                    <span>姓（フリガナ）: </span>{$userinfo.FirstName_2}<br>
+                                    <span>名（フリガナ）: </span>{$userinfo.LastName_2}<br>
+                                    <div class="blank9"></div>
+                                    <div>
+                                        <input type="button" value="編集 &gt;&gt;" class="form_button" onclick="window.location='user.php?act=act_edit_info';">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item_card">
+                                <div class="title">お届け先</div>
+                                <div class="info lib_member_item_card"> <span>氏名: </span>{$info.FirstName}{$info.LastName} - {$info.FirstName_2}{$info.LastName_2}<br>
+                                    <span>お届け先: </span>日本&nbsp;{$info.State}&nbsp;{$info.City}&nbsp;{$info.Room}&nbsp;{$info.AddressLine}<br>
+                                    <span>郵便番号: </span>{$info.PostalCode}<br>
+                                    <span>電話番号: </span>{$info.Phone}
+                                    <div class="blank6"></div>
+                                    <div>
+                                        <input type="button" value="編集 &gt;&gt;" class="form_button" onclick="window.location='user.php?act=addressbook';">
+                                       </div>
+                                </div>
+                            </div>
+                            <div class="item_card">
+                                <div class="title">注文履歴</div>
+                                <div class="info lib_member_item_card"> <a href="user.php?act=order_list">注文履歴</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- {/if}-->
+                    <!-- {if $action eq 'act_edit_info'} -->
+                    <!--个人资料修改-->
+                    <div id="lib_member_profile">
+                        <div class="lib_member_title">個人情報編集</div>
+                        <div class="lib_member_info">個人情報を変更するには下記の内容を入力してください。終了した時は「変更します」をクリックしておけばいいです。</div>
+                        <div class="form lib_member_item_card">
+                            <form action="user.php" method="post" name="member_profile_form" onsubmit="return checkInfoForm(this);">
+                                <div class="lib_member_sub_title">個人情報を変更します</div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label>姓（氏名）: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="FirstName" value="{$userinfo.FirstName}" type="text" id="info_FirstName" class="form_input" check="姓（氏名）をご入力ください。~*" size="40" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label>名（氏名）: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="LastName" value="{$userinfo.LastName}" type="text" id="info_LastName"  class="form_input" check="名（氏名）をご入力ください。~*" size="40" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label>姓（フリガナ）: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="FirstName_2" value="{$userinfo.FirstName_2}" type="text" id="info_FirstName_2" class="form_input" check="姓（フリガナ）をご入力ください。~*" size="40" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label>名（フリガナ）: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="LastName_2" value="{$userinfo.LastName_2}" type="text" id="info_LastName_2" class="form_input" check="名（フリガナ）をご入力ください。~*" size="40" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label></label>
+                                    <span>
+                                    <input name="Submit" type="submit" class="form_button form_button_130" value="変更します">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <input type="hidden" name="address_id" value="{$info.address_id}">
+                                <input type="hidden" name="data" value="member_profile">
+                                <input type="hidden" name="act" value="act_edit_info">
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- {/if}-->
+                    <!-- {if $action eq 'edit_password'} -->
+                    <!--密码修改-->
+                    <div id="lib_member_password">
+                        <div class="lib_member_title">パスワード変更</div>
+                        <div class="lib_member_info">個人情報を変更するには下記の内容を入力してください。終了した時は「パスワードを変更します」をクリックしておけばいいです。</div>
+                        <div class="form lib_member_item_card">
+                            <form action="user.php" method="post" name="member_password_form" onsubmit="return checkPassForm(this);">
+                                <div class="lib_member_sub_title">パスワード変更</div>                               
+                                <div class="rows">
+                                    <label>新しいパスワード: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="Password" value="" type="password" class="form_input" check="新しいパスワードをご入力ください。~*" size="50" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label>（再入力）新しいパスワード: <font class="fc_red">*</font></label>
+                                    <span>
+                                    <input name="ConfirmPassword" value="" type="password" class="form_input" check="新しいパスワードを再入力してください。~=Password|ご確認したパスワードはご入力したのと一致していません。*" size="50" maxlength="20">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="rows">
+                                    <label></label>
+                                    <span>
+                                    <input name="Submit" type="submit" class="form_button form_button_130" value="パスワード変更">
+                                    </span>
+                                    <div class="clear"></div>
+                                </div>
+                                <input type="hidden" name="data" value="member_password">
+                                <input type="hidden" name="act" value="edit_password">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- {/if}-->
+                    <!-- {if $action eq 'addressbook'} -->
+                    <!--收货地址-->
+                    <div id="lib_member_address_book">
+                        <div class="lib_member_title">お届け先管理</div>
+                        <div class="lib_member_info">下記の届け先を管理してください、登録したアドレスは持っていない方は「新しい届け先を追加します」をクリックしてください。</div>
+                        <div>
+                            <div class="address">
+                                <div class="t">
+                                    <div class="fl">届け先</div>
+                                    <div class="fr"></div>
+                                </div>
+                                <form action="user.php" method="post" name="add_and_update_shipping_address_form" onsubmit="return checkAddressForm(this);">
+                                    <div class="item lib_member_item_card">
+                                        <div class="rows"> 姓（氏名）: <font class="fc_red">*</font>&nbsp;&nbsp;
+                                            <input name="FirstName" value="{$info.FirstName}" type="text" class="form_input" check="姓（氏名）をご入力ください。~*" size="20" maxlength="20">
+                                        </div>
+                                        <div class="rows"> 名（氏名）: <font class="fc_red">*</font>&nbsp;&nbsp;
+                                            <input name="LastName" value="{$info.LastName}" type="text" class="form_input" check="名（氏名）をご入力ください。~*" size="20" maxlength="20">
+                                        </div>
+                                        <div class="rows"> 姓（フリガナ）: <font class="fc_red">*</font>&nbsp;&nbsp;
+                                            <input name="FirstName_2" value="{$info.FirstName_2}" type="text" class="form_input" check="姓（フリガナ）をご入力ください。~*" size="20" maxlength="20">
+                                        </div>
+                                        <div class="rows"> 名（フリガナ）: <font class="fc_red">*</font>&nbsp;&nbsp;
+                                            <input name="LastName_2" value="{$info.LastName_2}" type="text" class="form_input" check="名（氏名）をご入力ください。~*" size="20" maxlength="20">
+                                        </div>
+                                        <div class="rows"> 郵便番号: <font class="fc_red">*</font>&nbsp;&nbsp;
+                                            <input name="PostalCode" value="{$info.PostalCode}" type="text" class="form_input" check="郵便番号をご入力ください。~*" size="10" maxlength="10" id="PostalCode">
+                                            <input type="button" name="zipcode_area" value="住所を検索" class="form_button" onclick="zipcode('PostalCode', 'State', 'City', 'AddressLine');">
+                                            半角数字、7文字　例：1066182 </div>
+                                        <div class="rows"> 都道府県: <font class="fc_red">*</font>
+                                            <input name="State" value="{$info.State}" type="text" class="form_input" check="都道府県をご入力ください。~*" size="40" maxlength="20" id="State">
+                                        </div>
+                                        <div class="rows"> 市区町村: <font class="fc_red">*</font>
+                                            <input name="City" value="{$info.City}" type="text" class="form_input" check="市区町村をご入力ください。~*" size="40" maxlength="20" id="City">
+                                        </div>
+                                        <div class="rows"> 町名・番地: <font class="fc_red">*</font>
+                                            <input name="AddressLine" value="{$info.AddressLine}" type="text" class="form_input" check="市区町村をご入力ください。~*" size="40" maxlength="200" id="AddressLine">
+                                        </div>
+                                        <div class="rows"> ビル・マンション名: 
+                                            <input name="Room" value="{$info.Room}" type="text" class="form_input" check="ビル・マンション名をご入力ください。~*" size="40" maxlength="50">
+                                        </div>
+                                        <div class="rows"> 電話番号: <font class="fc_red">*</font>
+                                            <input name="Phone" value="{$info.Phone}" type="text" class="form_input" check="電話番号をご入力ください。~*" size="22" maxlength="20">
+                                        </div>
+                                    <div class="rows button">
+                                        <input name="Submit" type="submit" class="form_button" value="変更">
+                                        <!--<input name="Cancel" type="button" class="form_button cancel_button" value="キャンセル" onclick="window.location='/user.php';">-->
+                                      </div>
+                                    </div>
+                                    <input type="hidden" name="act" value="upd_shipping_address">
+                                    <input type="hidden" name="UId" value="{$info.user_id}">
+                                    <input type="hidden" name="address_id" value="{$info.address_id}">
+                                    <input type="hidden" name="data" value="member_address_book">
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                   <!-- {/if}--> 
+                   <!--{if $action eq 'collection_list'} -->
+        
+                    <!--收藏-->
+                        <div id="lib_member_wishlists">
+                            <div class="lib_member_title">お気に入りリスト</div>
+                            {insert_scripts files='transport.js,utils.js'}
+                            
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="item_list">
+                                <tbody>
+                                    <tr class="tb_title">
+                                        <td width="18%">画像</td>
+                                        <td width="50%">商品</td>
+                                        <td width="15%">价格</td>
+                                        <td width="21%" class="last">操作</td>
+                                    </tr>
+                                    <!--{foreach from=$goods_list item=goods}-->
+                                    <tr class="item_list_out" onmouseover="this.className='item_list_over';" onmouseout="this.className='item_list_out';" align="center">
+                                        <td valign="top">
+                                        <a href="{$goods.url}" target="_blank">
+                                        <img src="{$goods.goods_thumb}" width="100" height="100" alt="{$goods.goods_name|escape:html}">
+                                        </a>
+                                        </td>
+                                        <td align="left"><a href="{$goods.url}" target="_blank">{$goods.goods_name|escape:html} </a></td>
+                                        <td>{$goods.shop_price}</td>
+                                       
+                                        <td>                                     
+                                   <a href="javascript:addToCart({$goods.goods_id})" class="f6">{$lang.add_to_cart}</a> <br />
+                                   <a href="javascript:if (confirm('{$lang.remove_collection_confirm}')) location.href='user.php?act=delete_collection&collection_id={$goods.rec_id}'" class="f6">{$lang.drop}</a><br />
+                                        </td>
+                                    </tr>
+                                   <!--{/foreach} -->
+                                   
+                                </tbody>
+                            </table>
+                            <div id="turn_page"><!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem --></div>
+                        </div>
+                   <!-- {/if}--> 
+                       
+                </div>
+            </div>
+            </div>
+
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+    </div><!--.corners_center end-->
+    <div class="corners_bot"></div><!--.corners_bot-->
+</div><!--.main end-->
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

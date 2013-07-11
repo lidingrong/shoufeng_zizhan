@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+html{height:100%;width:100%;}
+html,body{height:100%;font-family: "ＭＳ Ｐゴシック", sans-serif !important;}
+img{border:0;vertical-align:top;}
+a {color: #2b2b2b;text-decoration: none;}
+a:hover{text-decoration:none;color:#f41678;}
+:focus{outline:0;}
+h1,h2,h3,h4,h5,h6{font-size:14px;font-weight:normal;}
+ul li, ol li{ list-style:none;}
+.clear{ clear:both;}
+.main{width:960px; margin:0px auto;}
+#ur_here{padding:10px 0;}
+
+/*登录页*/
+.divlog-box{ width:920px; padding:20px; margin:0px auto; color:#2b2b2b; font:14px/22px Arial;}
+.divlog-box a{ color:#2b2b2b;}
+.divlog-box a:hover{ color:#f00;}
+
+.log-text{ margin:20px 0px;}
+.log-box{ overflow:hidden; zoom:1; font:12px/22px Arial; padding:20px 30px;}
+.log-box .log-left{ float:left; _display:inline; width:43%; border:1px #CCC solid; padding:10px 20px;}
+.log-box .log-right{ float:right; _display:inline; width:43%; border:1px #CCC solid; padding:10px 20px;}
+.log-box .log-title{ font: bold 16px/30px Arial; color:#333; margin-bottom:10px;}
+.log-box .f_card{ height:120px;}
+.log-button{ background:#a10c4d; border:none; padding:5px 20px; color:#fff; font-size:12px; cursor:pointer; margin:10px 0px;}
+.log-button:hover{ background:#ca1561;}
+.btn{ border-top:1px #CCC solid; padding-top:10px; margin-top:10px; text-align:right;}
+.rows{ line-height:30px; margin-bottom:10px;}
+.log-box .rows label {width: 80px;height: 22px;line-height: 22px; float:left;}
+.forgot{ text-align:left; text-decoration:underline; margin-top:10px;}
+.log-infor{ margin-bottom:10px;}
+.log-box .form_input{ border:1px #CCC solid; width:200px;}
+
+.reg-box{ margin:20px 0px; font:12px/22px Arial;}
+.fc_red{ color:#F00;}
+.reg-box .rows label {width: 120px;height: 22px;line-height: 22px; float:left;}
+.f_item{ background: #E8E7E7;height: 24px;ext-indent: 5px; font:14px/24px; color: black; padding:2px 0px 2px 10px; margin:10px 0px;}
+.blank3{ height:10px; margin-bottom:10px; border-bottom:1px #ccc solid; clear:both;}
+.reg-box .form_input{border:1px #CCC solid;}
+.rows .form_input{ width:240px;}
+.reg-box .form_focus {border-color:#f41678;}
+.c_rows {margin: 10px 0;float: left;width: 350px; overflow:hidden; zoom:1;}
+.c_rows .c_left {float: left;line-height: 22px;width: 100px;}
+.rows2{ border-top:1px #ccc solid; margin-top:10px; padding-top:10px;}
+
+.reg-box .form_button {background: #a10c4d;border: none; color: #fff;font-size: 12px;cursor: pointer;}
+.reg-box .form_button:hover {background: #ca1561;}
+
+.products-box{ margin-top:5px; overflow:hidden; zoom:1;}
+.products-left{ width:760px; float:left; _display:inline; padding-top:10px;}
+.pro-title{ color:#f41678; font:bold 16px/28px "Arial"; border-bottom:1px #e5e7eb solid; max-height:56px;overflow:hidden; margin:0px 20px 0px 20px;}
+
+/*会员管理*/
+.rows {line-height: 30px;}
+.rows label {width: 120px;height: 22px;line-height: 22px;float: left;}
+.lib_member_item_card span {min-width: 70px;padding-right: 20px;display: block;float: left;font-weight: bolder;}
+.form_input {border: 1px #CCC solid;}
+.form_button {background: #a10c4d;border: none;color: #fff;font-size: 12px;cursor: pointer;margin: 10px 0px;}
+.form_button:hover {background: #ca1561;}
+#turn_page {text-align: center;height: 26px;line-height: 26px;}
+.fc_red{color:red;}
+.accout-box{ overflow:hidden; zoom:1; width:900px; font:12px/20px Arial;}
+.leftMenu{ width:20%; float:left;}
+.rightContents{ width:78%; float:right;}
+.lib_member_item_card {border: 1px solid #ddd;padding: 12px;min-height: 120px; overflow:hidden; zoom:1;}
+.lib_member_item_card span{ min-width:70px; padding-right:20px; display:block; float:left; font-weight:bolder;}
+#lib_member_menu dt { font:bold 14px/22px Arial;height: 22px; border-bottom: 1px solid #ddd; padding-bottom:5px; margin-bottom:10px;}
+#lib_member_menu dd { font:12px/22px Arial;text-indent: 15px; background:url(../images/ico.png) no-repeat 5px 8px;}
+#lib_member_menu dd.clear_line {height: 10px;margin-bottom: 10px;}
+.accout-box .form_input{ width:200px;}
+
+.lib_member_title { font:bold 16px/24px Arial;border-bottom: 1px solid #ddd;}
+.lib_member_info {padding: 15px 0;}
+#lib_member_index .item_card {width: 100%;margin-bottom: 12px;}
+#lib_member_index .item_card .title {font-weight: bold; font:bold 18px/34px Arial;}
+#lib_member_index .item_card .info .add_shipping_address {margin-left: 15px;color: #ff6600;font-size: 12px;}
+
+#lib_member_profile , #lib_member_password , #lib_member_address_book , #lib_member_wishlists{ margin-bottom:12px;}
+#lib_member_address_book .address .t {height: 26px;border-bottom: 1px solid #ddd;font-size: 16px;font-weight: bold;overflow:hidden; zoom:1;}
+#lib_member_address_book .address .t .fl {float: left;font-size: 16px;font-weight: bold;}
+#lib_member_address_book .address .t .fr {float: right;height: 26px;line-height: 26px;}
+#lib_member_address_book .address .t .fr .add_new_address {font-weight: normal;font-size: 12px;color: #ff6600;}
+#lib_member_address_book .address .item .opt {text-align: right;}
+#lib_member_orders .item_list { margin:10px 0px;}
+#lib_member_orders .item_list .tb_title td {height: 28px;font-weight: bold;text-align: center; background:#f3f3f3; color:#2b2b2b;}
+#lib_member_orders .item_list .item_list_out td{ padding:5px 0px;}
+#lib_member_orders .item_list .item_list_over td{ padding:5px 0px 4px 0px; border-bottom:1px #ccc solid;}
+
+#lib_payment_tips_success {position: absolute;z-index: 10001;border: 1px solid #333;background: #f7f7f7;left: 0px;top: 0px;width: 450px; height:150px;padding: 10px;display: none; color:#2b2b2b; padding-left:30px; font-size:14px; line-height:24px;}
+#lib_payment_tips_success .close {text-align: right;}
+#lib_payment_tips_success .close a{ color:#2b2b2b; background:url(../images/btn_window_close.gif) no-repeat; padding-left:20px;}
+#lib_payment_tips_success .close a:hover{ color:#900;}
+
+#lib_member_wishlists .item_list { margin:10px 0px;}
+#lib_member_wishlists .item_list .tb_title td {height: 28px;font-weight: bold;text-align: center; background:#f3f3f3; color:#2b2b2b;}
+#lib_member_wishlists .item_list .item_list_out td{ padding:10px 0px;}
+#lib_member_wishlists .item_list .item_list_over td{ padding:10px 0px 9px 0px; border-bottom:1px #ccc solid;}
+.item_list
+
+#turn_page {text-align: center;height: 26px;line-height: 26px;}
+#turn_page .page_button {background: #fff;border: 1px solid #ccc;margin: 0 3px;padding: 2px 5px;}
+.item_list img{ margin-right:15px;}
+
+.block_user,.pro-title{width:950px; margin:0px auto; padding:5px;}
+
+

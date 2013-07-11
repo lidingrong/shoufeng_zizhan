@@ -1,0 +1,24 @@
+<!-- $Id: user_address_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<div class="list-div">
+  <table width="100%" cellpadding="3" cellspacing="1">
+     <tr>
+      <th>{$lang.consignee}</th>
+      <th>{$lang.address}</th>
+      <th>{$lang.link}</th>
+      <th>{$lang.other}</th>
+    </tr>
+  {foreach from=$address key=Key item=val}
+    <tr>
+      <td>{$val.FirstName|escape}{$val.LastName|escape}&nbsp;&nbsp;&nbsp;&nbsp;[{$val.FirstName_2|escape} {$val.LastName_2|escape}]</td>
+      <td>{$val.State}&nbsp;&nbsp;{$val.City}&nbsp;&nbsp;{$val.AddressLine}&nbsp;&nbsp;<br />
+     {if $val.PostalCode}[{$val.PostalCode|escape}]{/if}</td>
+      <td>{$lang.tel}：{$val.Phone}<br />email: {$val.email}</td>
+      <td>{$lang.sign_building}:{$val.Room}</td>
+    </tr>
+  {foreachelse}
+    <tr><td class="no-records" colspan="4">{$lang.no_records}</td></tr>
+  {/foreach}
+  </table>
+</div>
+{include file="pagefooter.htm"}
