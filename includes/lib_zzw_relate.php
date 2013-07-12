@@ -161,9 +161,11 @@ function  zzw_goods_cat_link($link_type,$cat_id,$num=8)
 					//随机
 					shuffle($row_1);
 					$zzw_related_all=array_slice($row_1,0,$zzw_num);
-					
-					
-					
+					for($i=0;$i<count($zzw_related_all);$i++){
+						$url=build_uri('goods', $zzw_related_all[$i]['goods_id'], $zzw_related_all[$i]['goods_name']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+					}
+					//print_r($zzw_related_all);
 				}else{
 					return $zzw_related_all;
 				}
@@ -197,11 +199,15 @@ function  zzw_goods_cat_link($link_type,$cat_id,$num=8)
 					shuffle($row_2);
 					$zzw_related_all=array_slice($row_2,0,$zzw_num);
 					
-					foreach($zzw_related_all as $k1=>$v1){
-						$url=build_uri('article', $v1['goods_id'], $v1['goods_name']);
-						$a=array('url'=>$url);
-						$url_array=array($zzw_related_all[$k1],$a);
-						print_r($url_array);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						//array_merge($zzw_related_all[$i],array('url'=>$url));
+						echo $url;
+						exit();
 					}
 					
 					
@@ -812,6 +818,7 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 															foreach($temp_id_real  as $kk=>$vv){
 																		$insert_sql="INSERT INTO ".$GLOBALS['ecs']->table('goods_article')." (goods_id, article_id) VALUES (".$vv.", ".$zzw_article_id.")";
 																		$GLOBALS['db']->query($insert_sql);
+
 															}
 															
 															$sql3="select  goods_id  from  ".$GLOBALS['ecs']->table('goods_article')."  where article_id =".$zzw_article_id;
