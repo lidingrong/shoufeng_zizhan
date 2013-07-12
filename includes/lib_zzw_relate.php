@@ -162,8 +162,14 @@ function  zzw_goods_cat_link($link_type,$cat_id,$num=8)
 					shuffle($row_1);
 					$zzw_related_all=array_slice($row_1,0,$zzw_num);
 					for($i=0;$i<count($zzw_related_all);$i++){
-						$url=build_uri('goods', $zzw_related_all[$i]['goods_id'], $zzw_related_all[$i]['goods_name']);
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+						$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
 						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
 					}
 					//print_r($zzw_related_all);
 				}else{
@@ -205,9 +211,9 @@ function  zzw_goods_cat_link($link_type,$cat_id,$num=8)
 						//exit();
 						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
 						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
-						//array_merge($zzw_related_all[$i],array('url'=>$url));
-						echo $url;
-						exit();
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
 					}
 					
 					
@@ -252,7 +258,16 @@ function  zzw_goods_cat_link($link_type,$cat_id,$num=8)
 					//随机
 					shuffle($row_2);
 					$zzw_related_all=array_slice($row_2,0,$zzw_num);
-					//print_r($zzw_related_all);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 				}else{
 					return $zzw_related_all;
 				}
@@ -323,6 +338,16 @@ function  zzw_article_cat_link($link_type,$article_cat_id,$num=8)
 					//随机
 					shuffle($row_1);
 					$zzw_related_all=array_slice($row_1,0,$zzw_num);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+						$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+				    }
 				}else{
 					return $zzw_related_all;
 				}
@@ -362,6 +387,16 @@ function  zzw_article_cat_link($link_type,$article_cat_id,$num=8)
 				//随机
 				shuffle($row_2);
 				$zzw_related_all=array_slice($row_2,0,$zzw_num);
+				for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 			}else{
 				return $zzw_related_all;
 			}
@@ -400,6 +435,16 @@ function  zzw_article_cat_link($link_type,$article_cat_id,$num=8)
 				//随机
 				shuffle($row_2);
 				$zzw_related_all=array_slice($row_2,0,$zzw_num);
+				for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 				//print_r($zzw_related_all);
 				//exit();
 			}else{
@@ -442,6 +487,17 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 							//随机
 							shuffle($row002);
 							$zzw_related_all=array_slice($row002,0,$zzw_num);
+							for($i=0;$i<count($zzw_related_all);$i++){
+								//echo $zzw_related_all[$i]['article_id'];
+								//echo $zzw_related_all[$i]['title'];
+								//exit();
+								$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+								$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+								array_merge($zzw_related_all[$i],array('url'=>$url));
+								//echo $url;
+								//exit();
+							}
+							
 						}else{
 							//$sql003="select link_goods_id  from ".$GLOBALS['ecs']->table('link_goods') ."  where goods_id=".$zzw_goods_id;
 							//echo $sql003;
@@ -484,6 +540,16 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 										
 										$sql4="select  goods_id,cat_id,goods_name,shop_price,goods_desc,original_img,core_id  from  ".$GLOBALS['ecs']->table('goods')."  where goods_id in (".$temp_id_str.")  limit 0,".$zzw_num;
 										$zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+										for($i=0;$i<count($zzw_related_all);$i++){
+											//echo $zzw_related_all[$i]['article_id'];
+											//echo $zzw_related_all[$i]['title'];
+											//exit();
+											$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+											$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+											array_merge($zzw_related_all[$i],array('url'=>$url));
+											//echo $url;
+											//exit();
+										}
 										
 							}else{
 									//直接读取数据就可以了
@@ -491,7 +557,17 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 									$all_id=$GLOBALS['db']->getCol($sql3); 
 									$temp_id_str=implode(',',$all_id);
 									 $sql4="select  goods_id,cat_id,goods_name,shop_price,goods_desc,original_img,core_id  from  ".$GLOBALS['ecs']->table('goods')."  where goods_id in (".$temp_id_str.")  limit 0,".$zzw_num;
-									 $zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+									 $zzw_related_all=$GLOBALS['db']->getAll($sql4); 
+									 for($i=0;$i<count($zzw_related_all);$i++){
+											//echo $zzw_related_all[$i]['article_id'];
+											//echo $zzw_related_all[$i]['title'];
+											//exit();
+											$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+											$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+											array_merge($zzw_related_all[$i],array('url'=>$url));
+											//echo $url;
+											//exit();
+										} 
 									 }
 								
 							}
@@ -534,6 +610,17 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 					//随机
 					shuffle($row002);
 					$zzw_related_all=array_slice($row002,0,$zzw_num);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
+					
 				}else{
 						//精确匹配入库
 						$sql004="select count(*)  from ".$GLOBALS['ecs']->table('goods_article')."  where goods_id=".$zzw_goods_id;
@@ -546,6 +633,16 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 								$temp_id_str=implode(',',$all_id);
 								$sql4="select  article_id,cat_id,title,description  from  ".$GLOBALS['ecs']->table('article')."  where article_id in (".$temp_id_str.")  limit 0,".$zzw_num;
 								$zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+								for($i=0;$i<count($zzw_related_all);$i++){
+									//echo $zzw_related_all[$i]['article_id'];
+									//echo $zzw_related_all[$i]['title'];
+									//exit();
+									$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+									$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+									array_merge($zzw_related_all[$i],array('url'=>$url));
+									//echo $url;
+									//exit();
+								}
 						}else{
 								if(!$temp_num || $temp_num < $zzw_num){
 									//关联的文章数为空的话，直接进行匹配入库
@@ -581,6 +678,16 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 											$temp_id_str=implode(',',$all_id);
 											$sql4="select  article_id,cat_id,title,description  from  ".$GLOBALS['ecs']->table('article')."  where article_id in (".$temp_id_str.")   limit 0,".$zzw_num;
 											 $zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+											 for($i=0;$i<count($zzw_related_all);$i++){
+												//echo $zzw_related_all[$i]['article_id'];
+												//echo $zzw_related_all[$i]['title'];
+												//exit();
+												$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+												$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+												array_merge($zzw_related_all[$i],array('url'=>$url));
+												//echo $url;
+												//exit();
+											}
 									}else{
 													//直接读取数据就可以了
 													$sql3="select  article_id  from  ".$GLOBALS['ecs']->table('goods_article')."  where goods_id =".$zzw_goods_id;
@@ -588,6 +695,16 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 													$temp_id_str=implode(',',$all_id);
 													$sql4="select  article_id,cat_id,title,description  from  ".$GLOBALS['ecs']->table('article')."  where article_id in (".$temp_id_str.")  limit 0,".$zzw_num;
 													$zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+													for($i=0;$i<count($zzw_related_all);$i++){
+													//echo $zzw_related_all[$i]['article_id'];
+													//echo $zzw_related_all[$i]['title'];
+													//exit();
+													$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+													$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+													array_merge($zzw_related_all[$i],array('url'=>$url));
+													//echo $url;
+													//exit();
+												}
 									}
 						
 								}
@@ -631,11 +748,31 @@ function  zzw_goods_link($link_type,$goods_id,$num=8,$rand_or_match=false)
 					//随机
 					shuffle($row002);
 					$zzw_related_all=array_slice($row002,0,$zzw_num);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 					//print_r($zzw_related_all);
 				}else{
 					//暂时随机
 					shuffle($row002);
 					$zzw_related_all=array_slice($row002,0,$zzw_num);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 					//print_r($zzw_related_all);
 					//exit();
 				}		
@@ -710,10 +847,30 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 							//随机
 							shuffle($row_2);
 							$zzw_related_all=array_slice($row_2,0,$zzw_num);
+							for($i=0;$i<count($zzw_related_all);$i++){
+								//echo $zzw_related_all[$i]['article_id'];
+								//echo $zzw_related_all[$i]['title'];
+								//exit();
+								$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+								$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+								array_merge($zzw_related_all[$i],array('url'=>$url));
+								//echo $url;
+								//exit();
+							}
 						}else{
 							//随机
 							shuffle($row_2);
 								$zzw_related_all=array_slice($row_2,0,$zzw_num);
+								for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+						$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 							}
 				 }else{
 					return $zzw_related_all;
@@ -768,6 +925,16 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 					//随机
 					shuffle($row002_tags);
 					$zzw_related_all=array_slice($row002_tags,0,$zzw_num);
+					for($i=0;$i<count($zzw_related_all);$i++){
+						//echo $zzw_related_all[$i]['article_id'];
+						//echo $zzw_related_all[$i]['title'];
+						//exit();
+						$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+						$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+						array_merge($zzw_related_all[$i],array('url'=>$url));
+						//echo $url;
+						//exit();
+					}
 					//print_r($zzw_related_all);
 				}elseif($row002_article){
 								if(!$zzw_rand_or_match)
@@ -779,6 +946,16 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 									//随机
 									shuffle($row002_article);
 									$zzw_related_all=array_slice($row002_article,0,$zzw_num);
+									for($i=0;$i<count($zzw_related_all);$i++){
+										//echo $zzw_related_all[$i]['article_id'];
+										//echo $zzw_related_all[$i]['title'];
+										//exit();
+										$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+										$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+										array_merge($zzw_related_all[$i],array('url'=>$url));
+										//echo $url;
+										//exit();
+									}
 									//print_r($zzw_related_all);
 								}else{
 										//精确匹配入库
@@ -827,13 +1004,33 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 															$temp_id_str=implode(',',$all_id);
 															$sql4="select  goods_id,cat_id,goods_name,shop_price,goods_desc,original_img,core_id  from  ".$GLOBALS['ecs']->table('goods')."  where goods_id in (".$temp_id_str.")   limit 0,".$zzw_num;
 															 $zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+															 for($i=0;$i<count($zzw_related_all);$i++){
+																//echo $zzw_related_all[$i]['article_id'];
+																//echo $zzw_related_all[$i]['title'];
+																//exit();
+																$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+																$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+																array_merge($zzw_related_all[$i],array('url'=>$url));
+																//echo $url;
+																//exit();
+															}
 														}else{
 																	//直接读取数据就可以了
 																	$sql3="select  goods_id  from  ".$GLOBALS['ecs']->table('goods_article')."  where article_id =".$zzw_article_id;
 																	$all_id=$GLOBALS['db']->getCol($sql3); 
 																	$temp_id_str=implode(',',$all_id);
 																	$sql4="select  goods_id,cat_id,goods_name,shop_price,goods_desc,original_img,core_id  from  ".$GLOBALS['ecs']->table('goods')."  where goods_id in (".$temp_id_str.")  limit 0,".$zzw_num;
-																	$zzw_related_all=$GLOBALS['db']->getAll($sql4);  
+																	$zzw_related_all=$GLOBALS['db']->getAll($sql4); 
+																	for($i=0;$i<count($zzw_related_all);$i++){
+																		//echo $zzw_related_all[$i]['article_id'];
+																		//echo $zzw_related_all[$i]['title'];
+																		//exit();
+																		$a=array('gid'=>$zzw_related_all[$i]['goods_id']);
+																		$url=build_uri('goods', $a, $zzw_related_all[$i]['goods_name']);
+																		array_merge($zzw_related_all[$i],array('url'=>$url));
+																		//echo $url;
+																		//exit();
+																	} 
 															}
 										
 												}
@@ -883,10 +1080,30 @@ function  zzw_article_link($link_type,$article_id,$num=8,$rand_or_match=false)
 							//随机
 							shuffle($row_2);
 							$zzw_related_all=array_slice($row_2,0,$zzw_num);
+							for($i=0;$i<count($zzw_related_all);$i++){
+								//echo $zzw_related_all[$i]['article_id'];
+								//echo $zzw_related_all[$i]['title'];
+								//exit();
+								$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+								$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+								array_merge($zzw_related_all[$i],array('url'=>$url));
+								//echo $url;
+								//exit();
+							}
 						}else{
 							//随机
 							shuffle($row_2);
 							$zzw_related_all=array_slice($row_2,0,$zzw_num);
+							for($i=0;$i<count($zzw_related_all);$i++){
+								//echo $zzw_related_all[$i]['article_id'];
+								//echo $zzw_related_all[$i]['title'];
+								//exit();
+								$a=array('aid'=>$zzw_related_all[$i]['article_id']);
+								$url=build_uri('article', $a, $zzw_related_all[$i]['title']);
+								array_merge($zzw_related_all[$i],array('url'=>$url));
+								//echo $url;
+								//exit();
+							}
 							}
 				 }else{
 					return $zzw_related_all;
